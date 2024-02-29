@@ -36,7 +36,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "moviesHomeScreenTitle": MessageLookupByLibrary.simpleMessage("TMDB App"),
         "noConnectionExceptionMessage": MessageLookupByLibrary.simpleMessage("Sem conexão."),
         "notFoundExceptionMessage": MessageLookupByLibrary.simpleMessage("Não encontrado."),
+        "nowPlayingMoviesTitle": MessageLookupByLibrary.simpleMessage("Em cartaz"),
         "overviewLabel": MessageLookupByLibrary.simpleMessage("Sinopse"),
+        "popularMoviesTitle": MessageLookupByLibrary.simpleMessage("Populares"),
         "releaseDateLabel": m1,
         "seeAllButton": MessageLookupByLibrary.simpleMessage("Ver todos"),
         "seeMoreButton": MessageLookupByLibrary.simpleMessage("Ver mais"),
@@ -47,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Sua sessão expirou, faça login novamente para continuar utilizando o aplicativo."),
         "unauthorizedExceptionMessage": MessageLookupByLibrary.simpleMessage("Não autorizado"),
         "unprocessableEntityExceptionMessage": MessageLookupByLibrary.simpleMessage(
-            "Erro ao processar a requisição, verifique os dados e tente novamente.")
+            "Erro ao processar a requisição, verifique os dados e tente novamente."),
+        "upcomingMoviesTitle": MessageLookupByLibrary.simpleMessage("Próximos lançamentos")
       };
 }

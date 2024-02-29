@@ -3,14 +3,14 @@ import 'package:tmdb_app/modules/movies/models/movie.dart';
 import 'package:tmdb_app/modules/movies/services/movies.dart';
 import 'package:tmdb_app/modules/movies/stores/abstract_typed_store.dart';
 
-part 'top_rated.g.dart';
+part 'now_playing.g.dart';
 
-class TopRatedStore = TopRatedStoreBase with _$TopRatedStore;
+class NowPlayingStore = NowPlayingStoreBase with _$NowPlayingStore;
 
-abstract class TopRatedStoreBase extends AbstractTypedStore with Store {
+abstract class NowPlayingStoreBase extends AbstractTypedStore with Store {
   final MoviesService _moviesService;
 
-  TopRatedStoreBase(this._moviesService);
+  NowPlayingStoreBase(this._moviesService);
 
   @observable
   bool isLoadingRaw = false;
@@ -36,13 +36,11 @@ abstract class TopRatedStoreBase extends AbstractTypedStore with Store {
   @action
   Future<void> fetchMovies() async {
     setIsLoading(true);
-    var response = await _moviesService.topRatedMovies(nextPage);
-    var currentMovies = movies;
-    currentMovies = [...currentMovies, ...response.results];
+    var response = await _moviesService.nowPlayingMovies(nextPage);
+    moviesRaw = [...movies, ...response.results];
     if (response.page < response.totalPages) {
       nextPage = response.page + 1;
     }
-    moviesRaw = currentMovies;
     setIsLoading(false);
   }
 

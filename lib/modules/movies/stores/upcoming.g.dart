@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'top_rated.dart';
+part of 'upcoming.dart';
 
 // **************************************************************************
 // StoreGenerator
@@ -8,19 +8,19 @@ part of 'top_rated.dart';
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
-mixin _$TopRatedStore on TopRatedStoreBase, Store {
+mixin _$UpcomingStore on UpcomingStoreBase, Store {
   Computed<bool>? _$isLoadingComputed;
 
   @override
   bool get isLoading =>
-      (_$isLoadingComputed ??= Computed<bool>(() => super.isLoading, name: 'TopRatedStoreBase.isLoading')).value;
+      (_$isLoadingComputed ??= Computed<bool>(() => super.isLoading, name: 'UpcomingStoreBase.isLoading')).value;
   Computed<List<Movie>>? _$moviesComputed;
 
   @override
   List<Movie> get movies =>
-      (_$moviesComputed ??= Computed<List<Movie>>(() => super.movies, name: 'TopRatedStoreBase.movies')).value;
+      (_$moviesComputed ??= Computed<List<Movie>>(() => super.movies, name: 'UpcomingStoreBase.movies')).value;
 
-  late final _$isLoadingRawAtom = Atom(name: 'TopRatedStoreBase.isLoadingRaw', context: context);
+  late final _$isLoadingRawAtom = Atom(name: 'UpcomingStoreBase.isLoadingRaw', context: context);
 
   @override
   bool get isLoadingRaw {
@@ -35,7 +35,7 @@ mixin _$TopRatedStore on TopRatedStoreBase, Store {
     });
   }
 
-  late final _$moviesRawAtom = Atom(name: 'TopRatedStoreBase.moviesRaw', context: context);
+  late final _$moviesRawAtom = Atom(name: 'UpcomingStoreBase.moviesRaw', context: context);
 
   @override
   List<Movie> get moviesRaw {
@@ -50,7 +50,7 @@ mixin _$TopRatedStore on TopRatedStoreBase, Store {
     });
   }
 
-  late final _$nextPageAtom = Atom(name: 'TopRatedStoreBase.nextPage', context: context);
+  late final _$nextPageAtom = Atom(name: 'UpcomingStoreBase.nextPage', context: context);
 
   @override
   int get nextPage {
@@ -65,29 +65,29 @@ mixin _$TopRatedStore on TopRatedStoreBase, Store {
     });
   }
 
-  late final _$fetchMoviesAsyncAction = AsyncAction('TopRatedStoreBase.fetchMovies', context: context);
+  late final _$fetchMoviesAsyncAction = AsyncAction('UpcomingStoreBase.fetchMovies', context: context);
 
   @override
   Future<void> fetchMovies() {
     return _$fetchMoviesAsyncAction.run(() => super.fetchMovies());
   }
 
-  late final _$resetMoviesAsyncAction = AsyncAction('TopRatedStoreBase.resetMovies', context: context);
+  late final _$resetMoviesAsyncAction = AsyncAction('UpcomingStoreBase.resetMovies', context: context);
 
   @override
   Future<void> resetMovies() {
     return _$resetMoviesAsyncAction.run(() => super.resetMovies());
   }
 
-  late final _$TopRatedStoreBaseActionController = ActionController(name: 'TopRatedStoreBase', context: context);
+  late final _$UpcomingStoreBaseActionController = ActionController(name: 'UpcomingStoreBase', context: context);
 
   @override
   void setIsLoading(bool value) {
-    final _$actionInfo = _$TopRatedStoreBaseActionController.startAction(name: 'TopRatedStoreBase.setIsLoading');
+    final _$actionInfo = _$UpcomingStoreBaseActionController.startAction(name: 'UpcomingStoreBase.setIsLoading');
     try {
       return super.setIsLoading(value);
     } finally {
-      _$TopRatedStoreBaseActionController.endAction(_$actionInfo);
+      _$UpcomingStoreBaseActionController.endAction(_$actionInfo);
     }
   }
 

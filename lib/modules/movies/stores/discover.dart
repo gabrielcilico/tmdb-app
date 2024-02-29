@@ -13,17 +13,31 @@ abstract class DiscoverStoreBase extends AbstractTypedStore with Store {
   DiscoverStoreBase(this._moviesService);
 
   @observable
+  bool isLoadingRaw = false;
+
+  @observable
+  List<Movie> moviesRaw = [];
+
+  @override
+  @computed
+  bool get isLoading => isLoadingRaw;
+
+  @override
+  @computed
+  List<Movie> get movies => moviesRaw;
+
+  @observable
   int nextPage = 1;
 
   @action
-  void setIsLoading(bool value) => isLoading = value;
+  void setIsLoading(bool value) => isLoadingRaw = value;
 
   @override
   @action
   Future<void> fetchMovies() async {
     setIsLoading(true);
     var response = await _moviesService.discoverMovies(nextPage);
-    movies = [...movies, ...response.results];
+    moviesRaw = [...movies, ...response.results];
     if (response.page < response.totalPages) {
       nextPage = response.page + 1;
     }
@@ -33,7 +47,7 @@ abstract class DiscoverStoreBase extends AbstractTypedStore with Store {
   @override
   @action
   Future<void> resetMovies() async {
-    movies = [];
+    moviesRaw = [];
     nextPage = 1;
     await fetchMovies();
   }

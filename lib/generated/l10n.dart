@@ -227,6 +227,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Populares`
+  String get popularMoviesTitle {
+    return Intl.message(
+      'Populares',
+      name: 'popularMoviesTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Próximos lançamentos`
+  String get upcomingMoviesTitle {
+    return Intl.message(
+      'Próximos lançamentos',
+      name: 'upcomingMoviesTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Em cartaz`
+  String get nowPlayingMoviesTitle {
+    return Intl.message(
+      'Em cartaz',
+      name: 'nowPlayingMoviesTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

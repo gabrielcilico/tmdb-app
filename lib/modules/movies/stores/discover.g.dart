@@ -9,33 +9,44 @@ part of 'discover.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$DiscoverStore on DiscoverStoreBase, Store {
-  late final _$isLoadingAtom = Atom(name: 'DiscoverStoreBase.isLoading', context: context);
+  Computed<bool>? _$isLoadingComputed;
 
   @override
-  bool get isLoading {
-    _$isLoadingAtom.reportRead();
-    return super.isLoading;
+  bool get isLoading =>
+      (_$isLoadingComputed ??= Computed<bool>(() => super.isLoading, name: 'DiscoverStoreBase.isLoading')).value;
+  Computed<List<Movie>>? _$moviesComputed;
+
+  @override
+  List<Movie> get movies =>
+      (_$moviesComputed ??= Computed<List<Movie>>(() => super.movies, name: 'DiscoverStoreBase.movies')).value;
+
+  late final _$isLoadingRawAtom = Atom(name: 'DiscoverStoreBase.isLoadingRaw', context: context);
+
+  @override
+  bool get isLoadingRaw {
+    _$isLoadingRawAtom.reportRead();
+    return super.isLoadingRaw;
   }
 
   @override
-  set isLoading(bool value) {
-    _$isLoadingAtom.reportWrite(value, super.isLoading, () {
-      super.isLoading = value;
+  set isLoadingRaw(bool value) {
+    _$isLoadingRawAtom.reportWrite(value, super.isLoadingRaw, () {
+      super.isLoadingRaw = value;
     });
   }
 
-  late final _$moviesAtom = Atom(name: 'DiscoverStoreBase.movies', context: context);
+  late final _$moviesRawAtom = Atom(name: 'DiscoverStoreBase.moviesRaw', context: context);
 
   @override
-  List<Movie> get movies {
-    _$moviesAtom.reportRead();
-    return super.movies;
+  List<Movie> get moviesRaw {
+    _$moviesRawAtom.reportRead();
+    return super.moviesRaw;
   }
 
   @override
-  set movies(List<Movie> value) {
-    _$moviesAtom.reportWrite(value, super.movies, () {
-      super.movies = value;
+  set moviesRaw(List<Movie> value) {
+    _$moviesRawAtom.reportWrite(value, super.moviesRaw, () {
+      super.moviesRaw = value;
     });
   }
 
@@ -83,9 +94,11 @@ mixin _$DiscoverStore on DiscoverStoreBase, Store {
   @override
   String toString() {
     return '''
+isLoadingRaw: ${isLoadingRaw},
+moviesRaw: ${moviesRaw},
+nextPage: ${nextPage},
 isLoading: ${isLoading},
-movies: ${movies},
-nextPage: ${nextPage}
+movies: ${movies}
     ''';
   }
 }
