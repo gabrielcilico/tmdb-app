@@ -19,5 +19,15 @@
                 "type": "String"
             }
         }
+    },
+    "genresLabel": "Gênero(s)",
+    "overviewLabel": "Sinopse",
+    "computedVotesLabel": "{votes} votos computados",
+    "@computedVotesLabel": {
+        "placeholders": {
+            "votes": {
+                "type": "int"
+            }
+        }
     }
 }

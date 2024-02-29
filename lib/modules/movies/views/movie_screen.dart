@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:tmdb_app/common/config/config.dart';
+import 'package:tmdb_app/generated/l10n.dart';
 import 'package:tmdb_app/modules/movies/models/detailed_movie.dart';
 import 'package:tmdb_app/modules/movies/stores/movies.dart';
+import 'package:tmdb_app/modules/movies/widgets/genre_chip_list.dart';
+import 'package:tmdb_app/modules/movies/widgets/rate_indicator.dart';
 
 class MovieScreen extends StatefulWidget {
   final String movieId;
@@ -34,8 +38,65 @@ class _MovieScreenState extends State<MovieScreen> {
         appBar: AppBar(
           title: Text(detailedMovie.title),
         ),
-        body: Center(
-          child: Text('Movie ${widget.movieId} details'),
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Image.network(
+                      '${DefaultConfig().imageBaseUrl}${detailedMovie.posterPath}',
+                      width: 154,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            detailedMovie.title,
+                            style: Theme.of(context).textTheme.titleLarge,
+                            maxLines: 3,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            S.current.releaseDateLabel('${detailedMovie.releaseDate.year}'),
+                            style: Theme.of(context).textTheme.bodySmall,
+                          ),
+                          const SizedBox(height: 8),
+                          Row(
+                            children: [
+                              RateIndicator(rate: detailedMovie.voteAverage, fontSize: 16),
+                              const SizedBox(width: 8),
+                              Text(
+                                S.current.computedVotesLabel(detailedMovie.voteCount),
+                                style: Theme.of(context).textTheme.bodySmall,
+                              ),
+                            ],
+                          ),
+
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+                const SizedBox(height: 16),
+                Text(S.current.overviewLabel, style: Theme.of(context).textTheme.titleMedium),
+                Text(
+                  detailedMovie.overview,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                const SizedBox(height: 16),
+                GenreChipList(genres: detailedMovie.genres),
+              ]
+            ),
+          ),
         ),
       );
     });

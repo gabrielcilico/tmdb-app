@@ -169,6 +169,36 @@ class S {
       args: [date],
     );
   }
+
+  /// `Gênero(s)`
+  String get genresLabel {
+    return Intl.message(
+      'Gênero(s)',
+      name: 'genresLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sinopse`
+  String get overviewLabel {
+    return Intl.message(
+      'Sinopse',
+      name: 'overviewLabel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{votes} votos computados`
+  String computedVotesLabel(int votes) {
+    return Intl.message(
+      '$votes votos computados',
+      name: 'computedVotesLabel',
+      desc: '',
+      args: [votes],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
