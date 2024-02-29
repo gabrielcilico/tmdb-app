@@ -20,7 +20,7 @@ class DefaultConfig extends BaseConfig {
   String get environmentName => 'default';
 
   @override
-  String get apiKey => '32ff1972f078b12cb3ec733c27c91eb6';
+  String get apiKey => const String.fromEnvironment('API_KEY');
 
   @override
   String get apiBaseUrl => 'https://api.themoviedb.org/3/';
