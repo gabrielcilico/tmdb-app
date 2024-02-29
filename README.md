@@ -40,6 +40,7 @@ This is a "clone" of [TMDB](https://www.themoviedb.org/) made with [Flutter](htt
 ## API Info
 
 This app uses the **TMDB API** to fetch the data. To use the API you need to create an account and get an API key.
+Click [here](https://www.themoviedb.org/settings/api) to get your API key.
 
 API Reference: 
 - [TMDB API Docs](https://developer.themoviedb.org/docs/getting-started)
