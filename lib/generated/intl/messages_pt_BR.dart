@@ -20,19 +20,29 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'pt_BR';
 
+  static String m0(date) => "Lançado em ${date}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "badRequestExceptionMessage":
-            MessageLookupByLibrary.simpleMessage("Requisição má sucedida, verifique os dados e tente novamente."),
-        "defaultExceptionMessage":
-            MessageLookupByLibrary.simpleMessage("Serviço indisponível no momento, tente novamente mais tarde."),
-        "noConnectionExceptionMessage": MessageLookupByLibrary.simpleMessage("Sem conexão."),
-        "notFoundExceptionMessage": MessageLookupByLibrary.simpleMessage("Não encontrado."),
-        "timeOutExceptionMessage": MessageLookupByLibrary.simpleMessage("Tempo de requisição expirado."),
+        "badRequestExceptionMessage": MessageLookupByLibrary.simpleMessage(
+            "Requisição má sucedida, verifique os dados e tente novamente."),
+        "defaultExceptionMessage": MessageLookupByLibrary.simpleMessage(
+            "Serviço indisponível no momento, tente novamente mais tarde."),
+        "discoverMoviesTitle":
+            MessageLookupByLibrary.simpleMessage("Descubra novos filmes"),
+        "noConnectionExceptionMessage":
+            MessageLookupByLibrary.simpleMessage("Sem conexão."),
+        "notFoundExceptionMessage":
+            MessageLookupByLibrary.simpleMessage("Não encontrado."),
+        "releaseDateLabel": m0,
+        "seeAllButton": MessageLookupByLibrary.simpleMessage("Ver todos"),
+        "timeOutExceptionMessage": MessageLookupByLibrary.simpleMessage(
+            "Tempo de requisição expirado."),
         "titleLabel": MessageLookupByLibrary.simpleMessage("TMDB"),
         "unauthorizedAlertMessage": MessageLookupByLibrary.simpleMessage(
             "Sua sessão expirou, faça login novamente para continuar utilizando o aplicativo."),
-        "unauthorizedExceptionMessage": MessageLookupByLibrary.simpleMessage("Não autorizado"),
+        "unauthorizedExceptionMessage":
+            MessageLookupByLibrary.simpleMessage("Não autorizado"),
         "unprocessableEntityExceptionMessage": MessageLookupByLibrary.simpleMessage(
             "Erro ao processar a requisição, verifique os dados e tente novamente.")
       };

@@ -18,15 +18,17 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(
-        _current != null, 'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
+    assert(_current != null,
+        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
     return _current!;
   }
 
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false)
+        ? locale.languageCode
+        : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -135,6 +137,36 @@ class S {
       name: 'titleLabel',
       desc: '',
       args: [],
+    );
+  }
+
+  /// `Descubra novos filmes`
+  String get discoverMoviesTitle {
+    return Intl.message(
+      'Descubra novos filmes',
+      name: 'discoverMoviesTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ver todos`
+  String get seeAllButton {
+    return Intl.message(
+      'Ver todos',
+      name: 'seeAllButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lançado em {date}`
+  String releaseDateLabel(String date) {
+    return Intl.message(
+      'Lançado em $date',
+      name: 'releaseDateLabel',
+      desc: '',
+      args: [date],
     );
   }
 }

@@ -8,5 +8,16 @@
     "defaultExceptionMessage": "Serviço indisponível no momento, tente novamente mais tarde.",
     "unprocessableEntityExceptionMessage": "Erro ao processar a requisição, verifique os dados e tente novamente.",
 
-    "titleLabel": "TMDB"
+    "titleLabel": "TMDB",
+
+    "discoverMoviesTitle": "Descubra novos filmes",
+    "seeAllButton": "Ver todos",
+    "releaseDateLabel": "Lançado em {date}",
+    "@releaseDateLabel": {
+        "placeholders": {
+            "date": {
+                "type": "String"
+            }
+        }
+    }
 }
