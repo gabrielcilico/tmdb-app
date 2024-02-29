@@ -20,7 +20,7 @@ abstract class SearchStoreBase with Store {
   @observable
   int nextPage = 1;
 
-  String lastQuery = 'Vingadores';
+  String lastQuery = '';
 
   @action
   void setIsLoading(bool value) => isLoading = value;
