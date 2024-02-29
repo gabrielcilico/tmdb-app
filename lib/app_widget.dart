@@ -16,7 +16,7 @@ class AppWidget extends StatefulWidget {
 class _AppWidgetState extends State<AppWidget> {
   @override
   Widget build(BuildContext context) {
-    Modular.setNavigatorKey(Modular.get<NavigationService>().navigatorKey);
+    Modular.setNavigatorKey(NavigationService().navigatorKey);
     Modular.setInitialRoute(AppModule.splashScreenRoute);
 
     return MaterialApp.router(
