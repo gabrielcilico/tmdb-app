@@ -8,6 +8,7 @@ import 'package:tmdb_app/modules/movies/stores/now_playing.dart';
 import 'package:tmdb_app/modules/movies/stores/popular.dart';
 import 'package:tmdb_app/modules/movies/stores/top_rated.dart';
 import 'package:tmdb_app/modules/movies/stores/upcoming.dart';
+import 'package:tmdb_app/modules/movies/widgets/custom_app_bar.dart';
 import 'package:tmdb_app/modules/movies/widgets/horizontal_movie_list.dart';
 
 class MoviesHomeScreen extends StatefulWidget {
@@ -37,12 +38,7 @@ class _MoviesHomeScreenState extends State<MoviesHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: Text(S.current.moviesHomeScreenTitle),
-          leading: IconButton(
-            icon: const Icon(Icons.search),
-            onPressed: () => pushNamed(routeName: '/movies/search'),
-          )),
+      appBar: CustomAppBar(textTitle: S.of(context).moviesHomeScreenTitle),
       body: Observer(
         builder: (_) {
           return SingleChildScrollView(

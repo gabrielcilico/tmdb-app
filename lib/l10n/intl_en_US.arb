@@ -1,0 +1,42 @@
+{
+    "badRequestExceptionMessage": "Bad request, please check the data and try again.",
+    "unauthorizedExceptionMessage": "Unauthorized",
+    "unauthorizedAlertMessage": "Your session has expired, please log in again to continue using the application.",
+    "notFoundExceptionMessage": "Not found.",
+    "noConnectionExceptionMessage": "No connection.",
+    "timeOutExceptionMessage": "Request timeout.",
+    "defaultExceptionMessage": "Service unavailable at the moment, please try again later.",
+    "unprocessableEntityExceptionMessage": "Error processing the request, please check the data and try again.",
+    "moviesHomeScreenTitle": "TMDB App",
+    "discoverMoviesTitle": "Discover New Movies",
+    "seeAllButton": "See All",
+    "seeMoreButton": "See More",
+    "releaseDateLabel": "Released on {date}",
+    "@releaseDateLabel": {
+        "placeholders": {
+            "date": {
+                "type": "String"
+            }
+        }
+    },
+    "genresLabel": "Genre(s)",
+    "overviewLabel": "Overview",
+    "computedVotesLabel": "{votes} votes computed",
+    "@computedVotesLabel": {
+        "placeholders": {
+            "votes": {
+                "type": "int"
+            }
+        }
+    },
+    "similarMoviesTitle": "Similar Movies",
+    "searchMoviesTitle": "Search Movies",
+    "topRatedMoviesTitle": "Top Rated",
+    "popularMoviesTitle": "Most Popular",
+    "upcomingMoviesTitle": "Upcoming Releases",
+    "nowPlayingMoviesTitle": "Now Playing",
+    "castTitle": "Cast",
+    "detailsTitle": "Details",
+    "noImagePlaceholder": "No Image",
+    "searchExample": "Ex: Batman"
+}

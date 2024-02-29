@@ -31,7 +31,9 @@ class _AppWidgetState extends State<AppWidget> {
       debugShowCheckedModeBanner: false,
       supportedLocales: const <Locale>[
         Locale.fromSubtags(languageCode: 'pt', countryCode: 'BR'),
+        Locale.fromSubtags(languageCode: 'en', countryCode: 'US'),
       ],
+      locale: const Locale.fromSubtags(languageCode: 'pt', countryCode: 'BR'),
       theme: DefaultTheme.getTheme(context),
     );
   }
