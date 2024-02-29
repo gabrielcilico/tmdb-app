@@ -1,6 +1,8 @@
 import 'package:mobx/mobx.dart';
+import 'package:tmdb_app/modules/movies/models/credits.dart';
 import 'package:tmdb_app/modules/movies/models/detailed_movie.dart';
 import 'package:tmdb_app/modules/movies/models/movie.dart';
+import 'package:tmdb_app/modules/movies/services/credits.dart';
 import 'package:tmdb_app/modules/movies/services/movies.dart';
 
 part 'movies.g.dart';
@@ -9,8 +11,9 @@ class MoviesStore = MoviesStoreBase with _$MoviesStore;
 
 abstract class MoviesStoreBase with Store {
   final MoviesService _moviesService;
+  final CreditsService _creditsService;
 
-  MoviesStoreBase(this._moviesService);
+  MoviesStoreBase(this._moviesService, this._creditsService);
 
   @observable
   bool isLoading = false;
@@ -22,13 +25,22 @@ abstract class MoviesStoreBase with Store {
   bool isLoadingSimilar = false;
 
   @observable
+  bool isLoadingCast = false;
+
+  @observable
   Map<String, List<Movie>> similarMovies = {};
+
+  @observable
+  Map<String, List<Cast>> cast = {};
 
   @action
   void setIsLoading(bool value) => isLoading = value;
 
   @action
   void setIsLoadingSimilar(bool value) => isLoadingSimilar = value;
+
+  @action
+  void setIsLoadingCast(bool value) => isLoadingCast = value;
 
   @action
   Future<void> fetchDetailedMovie(String movieId) async {
@@ -38,7 +50,8 @@ abstract class MoviesStoreBase with Store {
     currentMovies[movieId.toString()] = response;
     detailedMovies = currentMovies;
     setIsLoading(false);
-    fetchSimilarMovies(movieId);
+    await fetchSimilarMovies(movieId);
+    await fetchCast(movieId);
   }
 
   @action
@@ -52,6 +65,16 @@ abstract class MoviesStoreBase with Store {
   }
 
   @action
+  Future<void> fetchCast(String movieId) async {
+    setIsLoadingCast(true);
+    var response = await _creditsService.getCast(int.parse(movieId));
+    var currentCast = cast;
+    currentCast[movieId.toString()] = response;
+    cast = currentCast;
+    setIsLoadingCast(false);
+  }
+
+  @action
   void removeDetailedMovie(String movieId) {
     var currentMovies = detailedMovies;
     currentMovies.remove(movieId);
@@ -60,5 +83,9 @@ abstract class MoviesStoreBase with Store {
     var currentSimilarMovies = similarMovies;
     currentSimilarMovies.remove(movieId);
     similarMovies = currentSimilarMovies;
+
+    var currentCast = cast;
+    currentCast.remove(movieId);
+    cast = currentCast;
   }
 }

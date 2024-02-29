@@ -54,6 +54,21 @@ mixin _$MoviesStore on MoviesStoreBase, Store {
     });
   }
 
+  late final _$isLoadingCastAtom = Atom(name: 'MoviesStoreBase.isLoadingCast', context: context);
+
+  @override
+  bool get isLoadingCast {
+    _$isLoadingCastAtom.reportRead();
+    return super.isLoadingCast;
+  }
+
+  @override
+  set isLoadingCast(bool value) {
+    _$isLoadingCastAtom.reportWrite(value, super.isLoadingCast, () {
+      super.isLoadingCast = value;
+    });
+  }
+
   late final _$similarMoviesAtom = Atom(name: 'MoviesStoreBase.similarMovies', context: context);
 
   @override
@@ -69,6 +84,21 @@ mixin _$MoviesStore on MoviesStoreBase, Store {
     });
   }
 
+  late final _$castAtom = Atom(name: 'MoviesStoreBase.cast', context: context);
+
+  @override
+  Map<String, List<Cast>> get cast {
+    _$castAtom.reportRead();
+    return super.cast;
+  }
+
+  @override
+  set cast(Map<String, List<Cast>> value) {
+    _$castAtom.reportWrite(value, super.cast, () {
+      super.cast = value;
+    });
+  }
+
   late final _$fetchDetailedMovieAsyncAction = AsyncAction('MoviesStoreBase.fetchDetailedMovie', context: context);
 
   @override
@@ -81,6 +111,13 @@ mixin _$MoviesStore on MoviesStoreBase, Store {
   @override
   Future<void> fetchSimilarMovies(String movieId) {
     return _$fetchSimilarMoviesAsyncAction.run(() => super.fetchSimilarMovies(movieId));
+  }
+
+  late final _$fetchCastAsyncAction = AsyncAction('MoviesStoreBase.fetchCast', context: context);
+
+  @override
+  Future<void> fetchCast(String movieId) {
+    return _$fetchCastAsyncAction.run(() => super.fetchCast(movieId));
   }
 
   late final _$MoviesStoreBaseActionController = ActionController(name: 'MoviesStoreBase', context: context);
@@ -106,6 +143,16 @@ mixin _$MoviesStore on MoviesStoreBase, Store {
   }
 
   @override
+  void setIsLoadingCast(bool value) {
+    final _$actionInfo = _$MoviesStoreBaseActionController.startAction(name: 'MoviesStoreBase.setIsLoadingCast');
+    try {
+      return super.setIsLoadingCast(value);
+    } finally {
+      _$MoviesStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   void removeDetailedMovie(String movieId) {
     final _$actionInfo = _$MoviesStoreBaseActionController.startAction(name: 'MoviesStoreBase.removeDetailedMovie');
     try {
@@ -121,7 +168,9 @@ mixin _$MoviesStore on MoviesStoreBase, Store {
 isLoading: ${isLoading},
 detailedMovies: ${detailedMovies},
 isLoadingSimilar: ${isLoadingSimilar},
-similarMovies: ${similarMovies}
+isLoadingCast: ${isLoadingCast},
+similarMovies: ${similarMovies},
+cast: ${cast}
     ''';
   }
 }

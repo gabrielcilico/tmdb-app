@@ -36,5 +36,7 @@
     "topRatedMoviesTitle": "Melhores avaliados",
     "popularMoviesTitle": "Populares",
     "upcomingMoviesTitle": "Próximos lançamentos",
-    "nowPlayingMoviesTitle": "Em cartaz"
+    "nowPlayingMoviesTitle": "Em cartaz",
+    "castTitle": "Elenco",
+    "detailsTitle": "Detalhes"
 }

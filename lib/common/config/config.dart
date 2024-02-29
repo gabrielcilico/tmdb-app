@@ -3,6 +3,8 @@ abstract class BaseConfig {
   String get apiBaseUrl;
   String get apiKey;
   String get imageBaseUrl;
+  String get imageBannerUrl;
+  String get imageCastUrl;
 }
 
 class DefaultConfig extends BaseConfig {
@@ -24,5 +26,11 @@ class DefaultConfig extends BaseConfig {
   String get apiBaseUrl => 'https://api.themoviedb.org/3/';
 
   @override
-  String get imageBaseUrl => 'https://image.tmdb.org/t/p/w154';
+  String get imageBaseUrl => 'https://image.tmdb.org/t/p/';
+
+  @override
+  String get imageBannerUrl => '${imageBaseUrl}w154';
+
+  @override
+  String get imageCastUrl => '${imageBaseUrl}w138_and_h175_face';
 }

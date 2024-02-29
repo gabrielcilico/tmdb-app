@@ -28,9 +28,11 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "badRequestExceptionMessage":
             MessageLookupByLibrary.simpleMessage("Requisição má sucedida, verifique os dados e tente novamente."),
+        "castTitle": MessageLookupByLibrary.simpleMessage("Elenco"),
         "computedVotesLabel": m0,
         "defaultExceptionMessage":
             MessageLookupByLibrary.simpleMessage("Serviço indisponível no momento, tente novamente mais tarde."),
+        "detailsTitle": MessageLookupByLibrary.simpleMessage("Detalhes"),
         "discoverMoviesTitle": MessageLookupByLibrary.simpleMessage("Descubra novos filmes"),
         "genresLabel": MessageLookupByLibrary.simpleMessage("Gênero(s)"),
         "moviesHomeScreenTitle": MessageLookupByLibrary.simpleMessage("TMDB App"),

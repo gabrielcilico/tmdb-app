@@ -5,6 +5,7 @@ import 'package:tmdb_app/generated/l10n.dart';
 import 'package:tmdb_app/modules/movies/models/detailed_movie.dart';
 import 'package:tmdb_app/modules/movies/stores/movies.dart';
 import 'package:tmdb_app/modules/movies/widgets/genre_chip_list.dart';
+import 'package:tmdb_app/modules/movies/widgets/horizontal_cast_list.dart';
 import 'package:tmdb_app/modules/movies/widgets/horizontal_movie_list.dart';
 import 'package:tmdb_app/modules/movies/widgets/network_image_adapter.dart';
 import 'package:tmdb_app/modules/movies/widgets/rate_indicator.dart';
@@ -43,7 +44,7 @@ class _MovieScreenState extends State<MovieScreen> {
       detailedMovie = store.detailedMovies[widget.movieId]!;
       return Scaffold(
         appBar: AppBar(
-          title: Text(detailedMovie.title),
+          title: Text(detailedMovie.title, maxLines: 1, overflow: TextOverflow.ellipsis),
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -99,6 +100,8 @@ class _MovieScreenState extends State<MovieScreen> {
               ],
               const SizedBox(height: 16),
               GenreChipList(genres: detailedMovie.genres),
+              const SizedBox(height: 16),
+              HorizontalCastList(casts: store.cast['${detailedMovie.id}'] ?? [], isLoading: store.isLoadingCast),
               const SizedBox(height: 16),
               HorizontalMovieList(
                   title: S.current.similarMoviesTitle,

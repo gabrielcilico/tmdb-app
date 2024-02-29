@@ -257,6 +257,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Elenco`
+  String get castTitle {
+    return Intl.message(
+      'Elenco',
+      name: 'castTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Detalhes`
+  String get detailsTitle {
+    return Intl.message(
+      'Detalhes',
+      name: 'detailsTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

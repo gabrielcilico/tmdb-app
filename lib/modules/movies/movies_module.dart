@@ -1,5 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:tmdb_app/common/http/http_service.dart';
+import 'package:tmdb_app/modules/movies/services/credits.dart';
 import 'package:tmdb_app/modules/movies/services/genres.dart';
 import 'package:tmdb_app/modules/movies/services/movies.dart';
 import 'package:tmdb_app/modules/movies/stores/discover.dart';
@@ -19,7 +20,8 @@ class MoviesModule extends Module {
   @override
   List<Bind> get binds => [
         Bind((i) => MoviesService(i<HttpService>())),
-        Bind((i) => MoviesStore(i<MoviesService>())),
+        Bind((i) => CreditsService(i<HttpService>())),
+        Bind((i) => MoviesStore(i<MoviesService>(), i<CreditsService>())),
         Bind((i) => GenresService(i<HttpService>())),
         Bind((i) => GenresStore(i<GenresService>())),
         Bind((i) => DiscoverStore(i<MoviesService>())),
