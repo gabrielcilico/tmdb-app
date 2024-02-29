@@ -2,6 +2,7 @@ abstract class BaseConfig {
   String get environmentName;
   String get apiBaseUrl;
   String get apiKey;
+  String get imageBaseUrl;
 }
 
 class DefaultConfig extends BaseConfig {
@@ -17,8 +18,11 @@ class DefaultConfig extends BaseConfig {
   String get environmentName => 'default';
 
   @override
-  String get apiKey => 'API_KEY';
+  String get apiKey => '32ff1972f078b12cb3ec733c27c91eb6';
 
   @override
-  String get apiBaseUrl => 'https://api.themoviedb.org/';
+  String get apiBaseUrl => 'https://api.themoviedb.org/3/';
+
+  @override
+  String get imageBaseUrl => 'https://image.tmdb.org/t/p/w154';
 }
