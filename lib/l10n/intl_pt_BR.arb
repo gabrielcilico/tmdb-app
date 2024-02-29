@@ -33,12 +33,15 @@
     },
 
     "similarMoviesTitle": "Filmes similares",
+    "searchMoviesTitle": "Buscar filmes",
     "topRatedMoviesTitle": "Melhores avaliados",
-    "popularMoviesTitle": "Populares",
+    "popularMoviesTitle": "Os Mais Populares",
     "upcomingMoviesTitle": "Próximos lançamentos",
     "nowPlayingMoviesTitle": "Em cartaz",
     "castTitle": "Elenco",
     "detailsTitle": "Detalhes",
 
-    "noImagePlaceholder": "Sem imagem"
+    "noImagePlaceholder": "Sem imagem",
+
+    "searchExample": "Ex: Batman"
 }

@@ -218,6 +218,16 @@ class S {
     );
   }
 
+  /// `Buscar filmes`
+  String get searchMoviesTitle {
+    return Intl.message(
+      'Buscar filmes',
+      name: 'searchMoviesTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Melhores avaliados`
   String get topRatedMoviesTitle {
     return Intl.message(
@@ -228,10 +238,10 @@ class S {
     );
   }
 
-  /// `Populares`
+  /// `Os Mais Populares`
   String get popularMoviesTitle {
     return Intl.message(
-      'Populares',
+      'Os Mais Populares',
       name: 'popularMoviesTitle',
       desc: '',
       args: [],
@@ -283,6 +293,16 @@ class S {
     return Intl.message(
       'Sem imagem',
       name: 'noImagePlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ex: Batman`
+  String get searchExample {
+    return Intl.message(
+      'Ex: Batman',
+      name: 'searchExample',
       desc: '',
       args: [],
     );

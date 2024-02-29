@@ -38,8 +38,11 @@ class _MoviesHomeScreenState extends State<MoviesHomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(S.current.moviesHomeScreenTitle),
-      ),
+          title: Text(S.current.moviesHomeScreenTitle),
+          leading: IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () => pushNamed(routeName: '/movies/search'),
+          )),
       body: Observer(
         builder: (_) {
           return SingleChildScrollView(

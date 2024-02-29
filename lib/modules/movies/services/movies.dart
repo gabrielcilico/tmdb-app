@@ -45,11 +45,13 @@ class MoviesService {
   }
 
   Future<Pageable<Movie>> searchMovies(String query, int page) async {
-    return await _getAndParsePageable('/search/movie', page: page, data: {'query': query});
+    return await _getAndParsePageable('/search/movie', page: page, queryParams: {'query': query});
   }
 
-  Future<Pageable<Movie>> _getAndParsePageable(String path, {int page = 1, data}) async {
-    final response = await http.get(path: path, data: data, queryParams: {'language': language, 'page': page});
+  Future<Pageable<Movie>> _getAndParsePageable(String path, {int page = 1, data, queryParams}) async {
+    var enhancedQueryParams = {'language': language, 'page': page};
+    enhancedQueryParams.addAll(queryParams ?? {});
+    final response = await http.get(path: path, data: data, queryParams: enhancedQueryParams);
     return Pageable.fromJson(response, (json) => Movie.fromJson(json));
   }
 }
