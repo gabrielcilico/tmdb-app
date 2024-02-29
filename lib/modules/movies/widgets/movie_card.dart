@@ -30,7 +30,7 @@ class MovieCard extends StatelessWidget {
             children: [
               Stack(
                 children: [
-                  NetworkImageAdapter(imageUrl: movie.posterPath, width: 154),
+                  NetworkImageAdapter(imageUrl: movie.posterPath ?? movie.backdropPath, width: 154),
                   Positioned(
                     top: 4,
                     left: 4,

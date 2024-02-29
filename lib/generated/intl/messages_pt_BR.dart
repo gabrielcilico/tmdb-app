@@ -37,6 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "genresLabel": MessageLookupByLibrary.simpleMessage("Gênero(s)"),
         "moviesHomeScreenTitle": MessageLookupByLibrary.simpleMessage("TMDB App"),
         "noConnectionExceptionMessage": MessageLookupByLibrary.simpleMessage("Sem conexão."),
+        "noImagePlaceholder": MessageLookupByLibrary.simpleMessage("Sem imagem"),
         "notFoundExceptionMessage": MessageLookupByLibrary.simpleMessage("Não encontrado."),
         "nowPlayingMoviesTitle": MessageLookupByLibrary.simpleMessage("Em cartaz"),
         "overviewLabel": MessageLookupByLibrary.simpleMessage("Sinopse"),

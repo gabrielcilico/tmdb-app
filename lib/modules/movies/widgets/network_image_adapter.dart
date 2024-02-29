@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tmdb_app/common/config/config.dart';
 import 'package:tmdb_app/design/theme/palette.dart';
+import 'package:tmdb_app/generated/l10n.dart';
 
 class NetworkImageAdapter extends StatelessWidget {
   final String? imageUrl;
@@ -13,16 +14,27 @@ class NetworkImageAdapter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (imageUrl == null || imageUrl!.isEmpty) {
-      return SizedBox(
-        width: width,
-        height: height,
-        child: Center(
-            child: Text('No image', style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Palette.secondary))),
-      );
+      return buildNoImageContainer(context);
     }
     return Image.network(
       '${DefaultConfig().imageBannerUrl}$imageUrl',
       width: width,
+      errorBuilder: (context, error, stackTrace) {
+        return buildNoImageContainer(context);
+      },
+    );
+  }
+
+  SizedBox buildNoImageContainer(BuildContext context) {
+    return SizedBox(
+      width: width,
+      height: height,
+      child: Container(
+        color: Palette.gray,
+        child: Center(
+            child: Text(S.current.noImagePlaceholder,
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Palette.white))),
+      ),
     );
   }
 }

@@ -277,6 +277,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Sem imagem`
+  String get noImagePlaceholder {
+    return Intl.message(
+      'Sem imagem',
+      name: 'noImagePlaceholder',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

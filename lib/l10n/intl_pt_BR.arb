@@ -38,5 +38,7 @@
     "upcomingMoviesTitle": "Próximos lançamentos",
     "nowPlayingMoviesTitle": "Em cartaz",
     "castTitle": "Elenco",
-    "detailsTitle": "Detalhes"
+    "detailsTitle": "Detalhes",
+
+    "noImagePlaceholder": "Sem imagem"
 }

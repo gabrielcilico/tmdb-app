@@ -10,7 +10,7 @@ import 'package:tmdb_app/modules/movies/stores/now_playing.dart';
 import 'package:tmdb_app/modules/movies/stores/popular.dart';
 import 'package:tmdb_app/modules/movies/stores/top_rated.dart';
 import 'package:tmdb_app/modules/movies/stores/upcoming.dart';
-import 'package:tmdb_app/modules/movies/views/movie_screen.dart';
+import 'package:tmdb_app/modules/movies/views/movie_screen/main.dart';
 import 'package:tmdb_app/modules/movies/views/movies_home_screen.dart';
 import 'package:tmdb_app/modules/movies/views/pageable_movies_screen.dart';
 
@@ -21,8 +21,8 @@ class MoviesModule extends Module {
   List<Bind> get binds => [
         Bind((i) => MoviesService(i<HttpService>())),
         Bind((i) => CreditsService(i<HttpService>())),
-        Bind((i) => MoviesStore(i<MoviesService>(), i<CreditsService>())),
         Bind((i) => GenresService(i<HttpService>())),
+        Bind((i) => MoviesStore(i<MoviesService>(), i<CreditsService>())),
         Bind((i) => GenresStore(i<GenresService>())),
         Bind((i) => DiscoverStore(i<MoviesService>())),
         Bind((i) => TopRatedStore(i<MoviesService>())),
