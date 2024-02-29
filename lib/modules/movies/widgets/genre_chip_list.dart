@@ -13,7 +13,6 @@ class GenreChipList extends StatefulWidget {
 }
 
 class _GenreChipListState extends State<GenreChipList> {
-
   @override
   void initState() {
     super.initState();

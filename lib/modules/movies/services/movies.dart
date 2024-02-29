@@ -41,7 +41,7 @@ class MoviesService {
   }
 
   Future<Pageable<Movie>> _getAndParsePageable(String path, {int page = 1, data}) async {
-    final response = await http.get(path: path, data: data, queryParams: {'language': language});
+    final response = await http.get(path: path, data: data, queryParams: {'language': language, 'page': page});
     return Pageable.fromJson(response, (json) => Movie.fromJson(json));
   }
 }

@@ -12,6 +12,7 @@
 
     "discoverMoviesTitle": "Descubra novos filmes",
     "seeAllButton": "Ver todos",
+    "seeMoreButton": "Ver mais",
     "releaseDateLabel": "Lançado em {date}",
     "@releaseDateLabel": {
         "placeholders": {

@@ -30,7 +30,7 @@ class _MovieScreenState extends State<MovieScreen> {
   @override
   Widget build(BuildContext context) {
     return Observer(builder: (context) {
-      if (store.isDetailedMovieLoading || !store.detailedMovies.containsKey(widget.movieId)) {
+      if (store.isLoading || !store.detailedMovies.containsKey(widget.movieId)) {
         return const Center(child: CircularProgressIndicator());
       }
       detailedMovie = store.detailedMovies[widget.movieId]!;
@@ -41,61 +41,59 @@ class _MovieScreenState extends State<MovieScreen> {
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Image.network(
-                      '${DefaultConfig().imageBaseUrl}${detailedMovie.posterPath}',
-                      width: 154,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
+            child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.network(
+                    '${DefaultConfig().imageBaseUrl}${detailedMovie.posterPath}',
+                    width: 154,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width - 186,
+                          child: Text(
                             detailedMovie.title,
                             style: Theme.of(context).textTheme.titleLarge,
-                            maxLines: 3,
+                            maxLines: 6,
                             overflow: TextOverflow.ellipsis,
                           ),
-                          const SizedBox(height: 8),
-                          Text(
-                            S.current.releaseDateLabel('${detailedMovie.releaseDate.year}'),
-                            style: Theme.of(context).textTheme.bodySmall,
-                          ),
-                          const SizedBox(height: 8),
-                          Row(
-                            children: [
-                              RateIndicator(rate: detailedMovie.voteAverage, fontSize: 16),
-                              const SizedBox(width: 8),
-                              Text(
-                                S.current.computedVotesLabel(detailedMovie.voteCount),
-                                style: Theme.of(context).textTheme.bodySmall,
-                              ),
-                            ],
-                          ),
-
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-                const SizedBox(height: 16),
-                Text(S.current.overviewLabel, style: Theme.of(context).textTheme.titleMedium),
-                Text(
-                  detailedMovie.overview,
-                  style: Theme.of(context).textTheme.bodyMedium,
-                ),
-                const SizedBox(height: 16),
-                GenreChipList(genres: detailedMovie.genres),
-              ]
-            ),
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          S.current.releaseDateLabel('${detailedMovie.releaseDate.year}'),
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
+                        const SizedBox(height: 8),
+                        Row(
+                          children: [
+                            RateIndicator(rate: detailedMovie.voteAverage, fontSize: 16),
+                            const SizedBox(width: 8),
+                            Text(
+                              S.current.computedVotesLabel(detailedMovie.voteCount),
+                              style: Theme.of(context).textTheme.bodySmall,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+              const SizedBox(height: 16),
+              Text(S.current.overviewLabel, style: Theme.of(context).textTheme.titleMedium),
+              Text(
+                detailedMovie.overview,
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
+              const SizedBox(height: 16),
+              GenreChipList(genres: detailedMovie.genres),
+            ]),
           ),
         ),
       );

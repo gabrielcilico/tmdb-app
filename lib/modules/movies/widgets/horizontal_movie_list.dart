@@ -7,10 +7,13 @@ import 'package:tmdb_app/modules/movies/models/movie.dart';
 import 'package:tmdb_app/modules/movies/widgets/movie_card.dart';
 
 class HorizontalMovieList extends StatefulWidget {
+  String title;
   bool isLoading;
   List<Movie> movies;
+  Function()? seeAll;
 
-  HorizontalMovieList({Key? key, required this.movies, required this.isLoading}) : super(key: key);
+  HorizontalMovieList({Key? key, required this.title, required this.movies, required this.isLoading, this.seeAll})
+      : super(key: key);
 
   @override
   State<HorizontalMovieList> createState() => _HorizontalMovieListState();
@@ -28,20 +31,22 @@ class _HorizontalMovieListState extends State<HorizontalMovieList> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                S.of(context).discoverMoviesTitle,
+                widget.title,
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(color: Palette.secondary),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  S.of(context).seeAllButton,
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Palette.secondary),
+            if (widget.seeAll != null) ...[
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextButton(
+                  onPressed: () => widget.seeAll!(),
+                  child: Text(
+                    S.of(context).seeAllButton,
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Palette.secondary),
+                  ),
                 ),
               ),
-            ),
+            ],
           ],
         ),
         SizedBox(

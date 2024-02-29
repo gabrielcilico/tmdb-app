@@ -26,29 +26,24 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "badRequestExceptionMessage": MessageLookupByLibrary.simpleMessage(
-            "Requisição má sucedida, verifique os dados e tente novamente."),
+        "badRequestExceptionMessage":
+            MessageLookupByLibrary.simpleMessage("Requisição má sucedida, verifique os dados e tente novamente."),
         "computedVotesLabel": m0,
-        "defaultExceptionMessage": MessageLookupByLibrary.simpleMessage(
-            "Serviço indisponível no momento, tente novamente mais tarde."),
-        "discoverMoviesTitle":
-            MessageLookupByLibrary.simpleMessage("Descubra novos filmes"),
+        "defaultExceptionMessage":
+            MessageLookupByLibrary.simpleMessage("Serviço indisponível no momento, tente novamente mais tarde."),
+        "discoverMoviesTitle": MessageLookupByLibrary.simpleMessage("Descubra novos filmes"),
         "genresLabel": MessageLookupByLibrary.simpleMessage("Gênero(s)"),
-        "moviesHomeScreenTitle":
-            MessageLookupByLibrary.simpleMessage("TMDB App"),
-        "noConnectionExceptionMessage":
-            MessageLookupByLibrary.simpleMessage("Sem conexão."),
-        "notFoundExceptionMessage":
-            MessageLookupByLibrary.simpleMessage("Não encontrado."),
+        "moviesHomeScreenTitle": MessageLookupByLibrary.simpleMessage("TMDB App"),
+        "noConnectionExceptionMessage": MessageLookupByLibrary.simpleMessage("Sem conexão."),
+        "notFoundExceptionMessage": MessageLookupByLibrary.simpleMessage("Não encontrado."),
         "overviewLabel": MessageLookupByLibrary.simpleMessage("Sinopse"),
         "releaseDateLabel": m1,
         "seeAllButton": MessageLookupByLibrary.simpleMessage("Ver todos"),
-        "timeOutExceptionMessage": MessageLookupByLibrary.simpleMessage(
-            "Tempo de requisição expirado."),
+        "seeMoreButton": MessageLookupByLibrary.simpleMessage("Ver mais"),
+        "timeOutExceptionMessage": MessageLookupByLibrary.simpleMessage("Tempo de requisição expirado."),
         "unauthorizedAlertMessage": MessageLookupByLibrary.simpleMessage(
             "Sua sessão expirou, faça login novamente para continuar utilizando o aplicativo."),
-        "unauthorizedExceptionMessage":
-            MessageLookupByLibrary.simpleMessage("Não autorizado"),
+        "unauthorizedExceptionMessage": MessageLookupByLibrary.simpleMessage("Não autorizado"),
         "unprocessableEntityExceptionMessage": MessageLookupByLibrary.simpleMessage(
             "Erro ao processar a requisição, verifique os dados e tente novamente.")
       };

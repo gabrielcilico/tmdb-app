@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:tmdb_app/common/functions/navigator_service.dart';
 import 'package:tmdb_app/generated/l10n.dart';
-import 'package:tmdb_app/modules/movies/stores/movies.dart';
+import 'package:tmdb_app/modules/movies/stores/discover.dart';
 import 'package:tmdb_app/modules/movies/widgets/horizontal_movie_list.dart';
 
 class MoviesHomeScreen extends StatefulWidget {
@@ -13,12 +14,12 @@ class MoviesHomeScreen extends StatefulWidget {
 }
 
 class _MoviesHomeScreenState extends State<MoviesHomeScreen> {
-  final MoviesStore store = Modular.get<MoviesStore>();
+  final DiscoverStore store = Modular.get();
 
   @override
   void initState() {
     super.initState();
-    store.fetchDiscoverMovies();
+    store.fetchMovies();
   }
 
   @override
@@ -32,7 +33,11 @@ class _MoviesHomeScreenState extends State<MoviesHomeScreen> {
           return SingleChildScrollView(
             child: Column(
               children: [
-                HorizontalMovieList(movies: store.discoverMovies, isLoading: store.isDiscoverMoviesLoading),
+                HorizontalMovieList(
+                    title: S.of(context).discoverMoviesTitle,
+                    movies: store.movies,
+                    isLoading: store.isLoading,
+                    seeAll: () => pushNamed(routeName: '/movies/discover')),
               ],
             ),
           );
