@@ -40,7 +40,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "releaseDateLabel": m1,
         "seeAllButton": MessageLookupByLibrary.simpleMessage("Ver todos"),
         "seeMoreButton": MessageLookupByLibrary.simpleMessage("Ver mais"),
+        "similarMoviesTitle": MessageLookupByLibrary.simpleMessage("Filmes similares"),
         "timeOutExceptionMessage": MessageLookupByLibrary.simpleMessage("Tempo de requisição expirado."),
+        "topRatedMoviesTitle": MessageLookupByLibrary.simpleMessage("Melhores avaliados"),
         "unauthorizedAlertMessage": MessageLookupByLibrary.simpleMessage(
             "Sua sessão expirou, faça login novamente para continuar utilizando o aplicativo."),
         "unauthorizedExceptionMessage": MessageLookupByLibrary.simpleMessage("Não autorizado"),

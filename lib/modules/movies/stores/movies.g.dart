@@ -39,11 +39,48 @@ mixin _$MoviesStore on MoviesStoreBase, Store {
     });
   }
 
+  late final _$isLoadingSimilarAtom = Atom(name: 'MoviesStoreBase.isLoadingSimilar', context: context);
+
+  @override
+  bool get isLoadingSimilar {
+    _$isLoadingSimilarAtom.reportRead();
+    return super.isLoadingSimilar;
+  }
+
+  @override
+  set isLoadingSimilar(bool value) {
+    _$isLoadingSimilarAtom.reportWrite(value, super.isLoadingSimilar, () {
+      super.isLoadingSimilar = value;
+    });
+  }
+
+  late final _$similarMoviesAtom = Atom(name: 'MoviesStoreBase.similarMovies', context: context);
+
+  @override
+  Map<String, List<Movie>> get similarMovies {
+    _$similarMoviesAtom.reportRead();
+    return super.similarMovies;
+  }
+
+  @override
+  set similarMovies(Map<String, List<Movie>> value) {
+    _$similarMoviesAtom.reportWrite(value, super.similarMovies, () {
+      super.similarMovies = value;
+    });
+  }
+
   late final _$fetchDetailedMovieAsyncAction = AsyncAction('MoviesStoreBase.fetchDetailedMovie', context: context);
 
   @override
   Future<void> fetchDetailedMovie(String movieId) {
     return _$fetchDetailedMovieAsyncAction.run(() => super.fetchDetailedMovie(movieId));
+  }
+
+  late final _$fetchSimilarMoviesAsyncAction = AsyncAction('MoviesStoreBase.fetchSimilarMovies', context: context);
+
+  @override
+  Future<void> fetchSimilarMovies(String movieId) {
+    return _$fetchSimilarMoviesAsyncAction.run(() => super.fetchSimilarMovies(movieId));
   }
 
   late final _$MoviesStoreBaseActionController = ActionController(name: 'MoviesStoreBase', context: context);
@@ -59,10 +96,32 @@ mixin _$MoviesStore on MoviesStoreBase, Store {
   }
 
   @override
+  void setIsLoadingSimilar(bool value) {
+    final _$actionInfo = _$MoviesStoreBaseActionController.startAction(name: 'MoviesStoreBase.setIsLoadingSimilar');
+    try {
+      return super.setIsLoadingSimilar(value);
+    } finally {
+      _$MoviesStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void removeDetailedMovie(String movieId) {
+    final _$actionInfo = _$MoviesStoreBaseActionController.startAction(name: 'MoviesStoreBase.removeDetailedMovie');
+    try {
+      return super.removeDetailedMovie(movieId);
+    } finally {
+      _$MoviesStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 isLoading: ${isLoading},
-detailedMovies: ${detailedMovies}
+detailedMovies: ${detailedMovies},
+isLoadingSimilar: ${isLoadingSimilar},
+similarMovies: ${similarMovies}
     ''';
   }
 }

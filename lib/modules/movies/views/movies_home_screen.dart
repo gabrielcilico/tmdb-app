@@ -4,6 +4,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:tmdb_app/common/functions/navigator_service.dart';
 import 'package:tmdb_app/generated/l10n.dart';
 import 'package:tmdb_app/modules/movies/stores/discover.dart';
+import 'package:tmdb_app/modules/movies/stores/top_rated.dart';
 import 'package:tmdb_app/modules/movies/widgets/horizontal_movie_list.dart';
 
 class MoviesHomeScreen extends StatefulWidget {
@@ -14,12 +15,14 @@ class MoviesHomeScreen extends StatefulWidget {
 }
 
 class _MoviesHomeScreenState extends State<MoviesHomeScreen> {
-  final DiscoverStore store = Modular.get();
+  final DiscoverStore discoverStore = Modular.get();
+  final TopRatedStore topRatedStore = Modular.get();
 
   @override
   void initState() {
     super.initState();
-    store.fetchMovies();
+    discoverStore.resetMovies();
+    topRatedStore.resetMovies();
   }
 
   @override
@@ -34,9 +37,14 @@ class _MoviesHomeScreenState extends State<MoviesHomeScreen> {
             child: Column(
               children: [
                 HorizontalMovieList(
+                    title: S.of(context).topRatedMoviesTitle,
+                    movies: topRatedStore.movies,
+                    isLoading: topRatedStore.isLoading,
+                    seeAll: () => pushNamed(routeName: '/movies/top-rated')),
+                HorizontalMovieList(
                     title: S.of(context).discoverMoviesTitle,
-                    movies: store.movies,
-                    isLoading: store.isLoading,
+                    movies: discoverStore.movies,
+                    isLoading: discoverStore.isLoading,
                     seeAll: () => pushNamed(routeName: '/movies/discover')),
               ],
             ),

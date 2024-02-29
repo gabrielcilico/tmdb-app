@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:tmdb_app/common/config/config.dart';
 import 'package:tmdb_app/generated/l10n.dart';
 import 'package:tmdb_app/modules/movies/models/detailed_movie.dart';
 import 'package:tmdb_app/modules/movies/stores/movies.dart';
 import 'package:tmdb_app/modules/movies/widgets/genre_chip_list.dart';
+import 'package:tmdb_app/modules/movies/widgets/horizontal_movie_list.dart';
+import 'package:tmdb_app/modules/movies/widgets/network_image_adapter.dart';
 import 'package:tmdb_app/modules/movies/widgets/rate_indicator.dart';
 
 class MovieScreen extends StatefulWidget {
@@ -28,6 +29,12 @@ class _MovieScreenState extends State<MovieScreen> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    store.removeDetailedMovie(widget.movieId);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Observer(builder: (context) {
       if (store.isLoading || !store.detailedMovies.containsKey(widget.movieId)) {
@@ -45,10 +52,7 @@ class _MovieScreenState extends State<MovieScreen> {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image.network(
-                    '${DefaultConfig().imageBaseUrl}${detailedMovie.posterPath}',
-                    width: 154,
-                  ),
+                  NetworkImageAdapter(imageUrl: detailedMovie.posterPath, width: 154),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: Column(
@@ -85,14 +89,21 @@ class _MovieScreenState extends State<MovieScreen> {
                   )
                 ],
               ),
-              const SizedBox(height: 16),
-              Text(S.current.overviewLabel, style: Theme.of(context).textTheme.titleMedium),
-              Text(
-                detailedMovie.overview,
-                style: Theme.of(context).textTheme.bodyMedium,
-              ),
+              if (detailedMovie.overview != null) ...[
+                const SizedBox(height: 16),
+                Text(S.current.overviewLabel, style: Theme.of(context).textTheme.titleMedium),
+                Text(
+                  detailedMovie.overview!,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+              ],
               const SizedBox(height: 16),
               GenreChipList(genres: detailedMovie.genres),
+              const SizedBox(height: 16),
+              HorizontalMovieList(
+                  title: S.current.similarMoviesTitle,
+                  movies: store.similarMovies['${detailedMovie.id}'] ?? [],
+                  isLoading: store.isLoadingSimilar),
             ]),
           ),
         ),

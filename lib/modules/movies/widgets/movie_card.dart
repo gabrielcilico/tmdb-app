@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:tmdb_app/common/config/config.dart';
 import 'package:tmdb_app/common/functions/navigator_service.dart';
 import 'package:tmdb_app/design/theme/palette.dart';
 import 'package:tmdb_app/generated/l10n.dart';
 import 'package:tmdb_app/modules/movies/models/movie.dart';
+import 'package:tmdb_app/modules/movies/widgets/network_image_adapter.dart';
 import 'package:tmdb_app/modules/movies/widgets/rate_indicator.dart';
 
 class MovieCard extends StatelessWidget {
@@ -30,10 +30,7 @@ class MovieCard extends StatelessWidget {
             children: [
               Stack(
                 children: [
-                  Image.network(
-                    '${DefaultConfig().imageBaseUrl}${movie.posterPath}',
-                    fit: BoxFit.cover,
-                  ),
+                  NetworkImageAdapter(imageUrl: movie.posterPath, width: 154),
                   Positioned(
                     top: 4,
                     left: 4,
@@ -57,11 +54,13 @@ class MovieCard extends StatelessWidget {
                       const SizedBox(
                         height: 4,
                       ),
-                      Text(
-                        S.current.releaseDateLabel(DateFormat.yMd(Intl.defaultLocale).format(movie.releaseDate)),
-                        style: Theme.of(context).textTheme.bodySmall!.copyWith(color: Palette.gray),
-                        textAlign: TextAlign.center,
-                      ),
+                      if (movie.releaseDate != null) ...[
+                        Text(
+                          S.current.releaseDateLabel(DateFormat.yMd(Intl.defaultLocale).format(movie.releaseDate!)),
+                          style: Theme.of(context).textTheme.bodySmall!.copyWith(color: Palette.gray),
+                          textAlign: TextAlign.center,
+                        ),
+                      ]
                     ],
                   )),
             ],

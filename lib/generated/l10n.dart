@@ -207,6 +207,26 @@ class S {
       args: [votes],
     );
   }
+
+  /// `Filmes similares`
+  String get similarMoviesTitle {
+    return Intl.message(
+      'Filmes similares',
+      name: 'similarMoviesTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Melhores avaliados`
+  String get topRatedMoviesTitle {
+    return Intl.message(
+      'Melhores avaliados',
+      name: 'topRatedMoviesTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

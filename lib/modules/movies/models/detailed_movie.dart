@@ -6,16 +6,16 @@ import 'genre.dart';
 
 class DetailedMovie {
   bool adult;
-  String backdropPath;
+  String? backdropPath;
   List<Genre> genres;
   String homepage;
   int id;
-  String imdbId;
-  String originalLanguage;
-  String originalTitle;
-  String overview;
-  double popularity;
-  String posterPath;
+  String? imdbId;
+  String? originalLanguage;
+  String? originalTitle;
+  String? overview;
+  double? popularity;
+  String? posterPath;
   List<ProductionCompany> productionCompanies;
   List<ProductionCountry> productionCountries;
   DateTime releaseDate;

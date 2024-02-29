@@ -64,7 +64,40 @@ class _HorizontalMovieListState extends State<HorizontalMovieList> {
     int maxToShow = widget.movies.length >= 20 ? 19 : widget.movies.length;
     return ListView(
       scrollDirection: Axis.horizontal,
-      children: widget.movies.sublist(0, maxToShow).map((movie) => MovieCard(movie: movie)).toList(),
+      children: [
+        ...widget.movies.sublist(0, maxToShow).map((movie) => MovieCard(movie: movie)).toList(),
+        if (widget.seeAll != null) ...[buildSeeMoreCard(context)]
+      ],
+    );
+  }
+
+  Padding buildSeeMoreCard(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: InkWell(
+        onTap: () => widget.seeAll!(),
+        child: Container(
+          width: 154,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8),
+            color: Palette.white,
+          ),
+          clipBehavior: Clip.antiAliasWithSaveLayer,
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(Icons.arrow_forward_ios, color: Palette.secondary),
+                Text(
+                  S.of(context).seeAllButton,
+                  style: const TextStyle(color: Palette.secondary),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

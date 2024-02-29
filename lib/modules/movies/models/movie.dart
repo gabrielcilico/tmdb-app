@@ -1,15 +1,15 @@
 class Movie {
   int id;
   bool isAdult;
-  String backdropPath;
+  String? backdropPath;
   List<int> genreIds;
   List<String>? originCountry;
   String originalLanguage;
   String originalTitle;
   String overview;
   double popularity;
-  String posterPath;
-  DateTime releaseDate;
+  String? posterPath;
+  DateTime? releaseDate;
   String title;
   bool hasVideo;
   double voteAverage;
@@ -45,7 +45,9 @@ class Movie {
       overview: json['overview'],
       popularity: json['popularity'],
       posterPath: json['poster_path'],
-      releaseDate: DateTime.parse(json['release_date'] ?? json['first_air_date']),
+      releaseDate: ((json['release_date'] ?? json['first_air_date'] ?? '') as String).isNotEmpty
+          ? DateTime.parse(json['release_date'] ?? json['first_air_date'])
+          : null,
       title: json['title'],
       hasVideo: json['video'],
       voteAverage: json['vote_average'],

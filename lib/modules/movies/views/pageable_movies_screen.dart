@@ -1,32 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:tmdb_app/design/theme/palette.dart';
 import 'package:tmdb_app/generated/l10n.dart';
-import 'package:tmdb_app/modules/movies/stores/discover.dart';
+import 'package:tmdb_app/modules/movies/stores/abstract_typed_store.dart';
 import 'package:tmdb_app/modules/movies/widgets/movie_card.dart';
 
-class PageableDiscoverMoviesScreen extends StatefulWidget {
-  const PageableDiscoverMoviesScreen({Key? key}) : super(key: key);
+class PageableMoviesScreen extends StatefulWidget {
+  final AbstractTypedStore store;
+
+  const PageableMoviesScreen({Key? key, required this.store}) : super(key: key);
 
   @override
-  State<PageableDiscoverMoviesScreen> createState() => _PageableDiscoverMoviesScreenState();
+  State<PageableMoviesScreen> createState() => _PageableMoviesScreenState();
 }
 
-class _PageableDiscoverMoviesScreenState extends State<PageableDiscoverMoviesScreen> {
-  final DiscoverStore store = Modular.get();
-
+class _PageableMoviesScreenState extends State<PageableMoviesScreen> {
   @override
   void initState() {
     super.initState();
-    store.resetMovies();
+    widget.store.resetMovies();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    widget.store.resetMovies();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(S.current.discoverMoviesTitle),
+        title: Text(S.current.topRatedMoviesTitle),
       ),
       body: Observer(
         builder: (_) {
@@ -37,12 +42,12 @@ class _PageableDiscoverMoviesScreenState extends State<PageableDiscoverMoviesScr
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Wrap(
-                    children: store.movies.map((movie) => MovieCard(movie: movie)).toList(),
+                    children: widget.store.movies.map((movie) => MovieCard(movie: movie)).toList(),
                   ),
                   const SizedBox(height: 16),
-                  if (store.isLoading) const CircularProgressIndicator(),
+                  if (widget.store.isLoading) const CircularProgressIndicator(),
                   TextButton(
-                      onPressed: () => store.fetchMovies(),
+                      onPressed: () => widget.store.fetchMovies(),
                       child: Text(S.current.seeMoreButton,
                           style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Palette.white))),
                 ],

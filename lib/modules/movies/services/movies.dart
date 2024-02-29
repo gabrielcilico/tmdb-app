@@ -40,6 +40,14 @@ class MoviesService {
     return await _getAndParsePageable('/movie/upcoming', page: page);
   }
 
+  Future<Pageable<Movie>> similarMovies(int movieId, int page) async {
+    return await _getAndParsePageable('/movie/$movieId/similar', page: page);
+  }
+
+  Future<Pageable<Movie>> searchMovies(String query, int page) async {
+    return await _getAndParsePageable('/search/movie', page: page, data: {'query': query});
+  }
+
   Future<Pageable<Movie>> _getAndParsePageable(String path, {int page = 1, data}) async {
     final response = await http.get(path: path, data: data, queryParams: {'language': language, 'page': page});
     return Pageable.fromJson(response, (json) => Movie.fromJson(json));
