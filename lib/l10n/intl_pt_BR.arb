@@ -8,7 +8,7 @@
     "defaultExceptionMessage": "Serviço indisponível no momento, tente novamente mais tarde.",
     "unprocessableEntityExceptionMessage": "Erro ao processar a requisição, verifique os dados e tente novamente.",
 
-    "titleLabel": "TMDB",
+    "moviesHomeScreenTitle": "TMDB App",
 
     "discoverMoviesTitle": "Descubra novos filmes",
     "seeAllButton": "Ver todos",

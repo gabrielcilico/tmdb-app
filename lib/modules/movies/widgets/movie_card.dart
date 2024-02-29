@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:tmdb_app/common/config/config.dart';
+import 'package:tmdb_app/common/functions/navigator_service.dart';
 import 'package:tmdb_app/design/theme/palette.dart';
 import 'package:tmdb_app/generated/l10n.dart';
 import 'package:tmdb_app/modules/movies/models/movie.dart';
@@ -16,7 +17,7 @@ class MovieCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: InkWell(
-        onTap: () => {},
+        onTap: () => pushNamed(routeName: '/movies/${movie.id}'),
         child: Container(
           width: 154,
           decoration: const BoxDecoration(

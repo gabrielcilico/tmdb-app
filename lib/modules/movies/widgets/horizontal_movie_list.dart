@@ -17,7 +17,6 @@ class HorizontalMovieList extends StatefulWidget {
 }
 
 class _HorizontalMovieListState extends State<HorizontalMovieList> {
-
   @override
   Widget build(BuildContext context) {
     return Column(

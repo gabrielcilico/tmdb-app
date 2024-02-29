@@ -19,7 +19,7 @@ class MoviesService {
     return await _getAndParsePageable('/discover/movie', page: page);
   }
 
-  Future<DetailedMovie> getMovieDetails(int movieId) async {
+  Future<DetailedMovie> getMovieDetails(String movieId) async {
     final response = await http.get(path: '/movie/$movieId', queryParams: {'language': language});
     return DetailedMovie.fromJson(response);
   }

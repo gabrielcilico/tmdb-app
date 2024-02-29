@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:tmdb_app/generated/l10n.dart';
 import 'package:tmdb_app/modules/movies/stores/movies.dart';
 import 'package:tmdb_app/modules/movies/widgets/horizontal_movie_list.dart';
 
@@ -24,7 +25,7 @@ class _MoviesHomeScreenState extends State<MoviesHomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Movies'),
+        title: Text(S.current.moviesHomeScreenTitle),
       ),
       body: Observer(
         builder: (_) {
