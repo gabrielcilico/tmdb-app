@@ -23,12 +23,12 @@ This is a "clone" of [TMDB](https://www.themoviedb.org/) made with [Flutter](htt
 
 ## Dev Dependencies
 
-| Libraries                                                         |                                                                                                  Usage                                                                                                  |
-|-------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| [build_runner](https://pub.dev/packages/build_runner)             |                   Provides a concrete way of generating files using Dart code. It is used by many packages to generate code, and by end-users to generate code using those packages.                    |
-| [mobx_codegen](https://pub.dev/packages/mobx_codegen)             |                                          Adds support for annotating your MobX code with @observable, @computed, @action, making it super simple to use MobX.                                           |
-| [analyzer](https://pub.dev/packages/analyzer)                     |                                      This package provides a library that performs static analysis of Dart code. It is useful for tool integration and embedding.                                       |
-| [network_image_mock](https://pub.dev/packages/network_image_mock) | Since you are here you probably already know that calling Image.network results in 400 response in Flutter widget tests. The reason for this is that default HTTP client in tests always return a 400.  |
+| Libraries                                                         |                                                                                              Description                                                                                               |
+|-------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| [build_runner](https://pub.dev/packages/build_runner)             |                   Provides a concrete way of generating files using Dart code. It is used by many packages to generate code, and by end-users to generate code using those packages.                   |
+| [mobx_codegen](https://pub.dev/packages/mobx_codegen)             |                                          Adds support for annotating your MobX code with @observable, @computed, @action, making it super simple to use MobX.                                          |
+| [analyzer](https://pub.dev/packages/analyzer)                     |                                      This package provides a library that performs static analysis of Dart code. It is useful for tool integration and embedding.                                      |
+| [network_image_mock](https://pub.dev/packages/network_image_mock) | Since you are here you probably already know that calling Image.network results in 400 response in Flutter widget tests. The reason for this is that default HTTP client in tests always return a 400. |
 
 ## Before commit guide
 
