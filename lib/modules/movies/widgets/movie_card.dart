@@ -16,7 +16,7 @@ class MovieCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: InkWell(
-        onTap: () => print('Movie ${movie.id} tapped'),
+        onTap: () => {},
         child: Container(
           width: 154,
           decoration: const BoxDecoration(
@@ -41,27 +41,28 @@ class MovieCard extends StatelessWidget {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      movie.title,
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Palette.secondary),
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      textAlign: TextAlign.center,
-                    ),
-                    const SizedBox(height: 4,),
-                    Text(
-                      S.current.releaseDateLabel(DateFormat.yMd(Intl.defaultLocale).format(movie.releaseDate)),
-                      style: Theme.of(context).textTheme.bodySmall!.copyWith(color: Palette.gray),
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
-                )
-              ),
+                  padding: const EdgeInsets.all(4.0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        movie.title,
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Palette.secondary),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(
+                        height: 4,
+                      ),
+                      Text(
+                        S.current.releaseDateLabel(DateFormat.yMd(Intl.defaultLocale).format(movie.releaseDate)),
+                        style: Theme.of(context).textTheme.bodySmall!.copyWith(color: Palette.gray),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  )),
             ],
           ),
         ),

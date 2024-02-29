@@ -7,7 +7,6 @@ part 'movies.g.dart';
 class MoviesStore = MoviesStoreBase with _$MoviesStore;
 
 abstract class MoviesStoreBase with Store {
-
   final MoviesService _moviesService;
 
   MoviesStoreBase(this._moviesService);

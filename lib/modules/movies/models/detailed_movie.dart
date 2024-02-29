@@ -68,8 +68,10 @@ class DetailedMovie {
       overview: json['overview'],
       popularity: json['popularity'],
       posterPath: json['poster_path'],
-      productionCompanies: List<ProductionCompany>.from(json['production_companies'].map((x) => ProductionCompany.fromJson(x))),
-      productionCountries: List<ProductionCountry>.from(json['production_countries'].map((x) => ProductionCountry.fromJson(x))),
+      productionCompanies:
+          List<ProductionCompany>.from(json['production_companies'].map((x) => ProductionCompany.fromJson(x))),
+      productionCountries:
+          List<ProductionCountry>.from(json['production_countries'].map((x) => ProductionCountry.fromJson(x))),
       releaseDate: DateTime.parse(json['release_date']),
       revenue: json['revenue'],
       runtime: json['runtime'],

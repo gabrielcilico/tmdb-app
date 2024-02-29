@@ -9,8 +9,7 @@ part of 'movies.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$MoviesStore on MoviesStoreBase, Store {
-  late final _$isLoadingAtom =
-      Atom(name: 'MoviesStoreBase.isLoading', context: context);
+  late final _$isLoadingAtom = Atom(name: 'MoviesStoreBase.isLoading', context: context);
 
   @override
   bool get isDiscoverMoviesLoading {
@@ -25,8 +24,7 @@ mixin _$MoviesStore on MoviesStoreBase, Store {
     });
   }
 
-  late final _$discoverMoviesAtom =
-      Atom(name: 'MoviesStoreBase.discoverMovies', context: context);
+  late final _$discoverMoviesAtom = Atom(name: 'MoviesStoreBase.discoverMovies', context: context);
 
   @override
   List<Movie> get discoverMovies {
@@ -41,8 +39,7 @@ mixin _$MoviesStore on MoviesStoreBase, Store {
     });
   }
 
-  late final _$nextPageAtom =
-      Atom(name: 'MoviesStoreBase.nextPage', context: context);
+  late final _$nextPageAtom = Atom(name: 'MoviesStoreBase.nextPage', context: context);
 
   @override
   int get nextPage {
@@ -57,22 +54,18 @@ mixin _$MoviesStore on MoviesStoreBase, Store {
     });
   }
 
-  late final _$fetchDiscoverMoviesAsyncAction =
-      AsyncAction('MoviesStoreBase.fetchDiscoverMovies', context: context);
+  late final _$fetchDiscoverMoviesAsyncAction = AsyncAction('MoviesStoreBase.fetchDiscoverMovies', context: context);
 
   @override
   Future<void> fetchDiscoverMovies() {
-    return _$fetchDiscoverMoviesAsyncAction
-        .run(() => super.fetchDiscoverMovies());
+    return _$fetchDiscoverMoviesAsyncAction.run(() => super.fetchDiscoverMovies());
   }
 
-  late final _$MoviesStoreBaseActionController =
-      ActionController(name: 'MoviesStoreBase', context: context);
+  late final _$MoviesStoreBaseActionController = ActionController(name: 'MoviesStoreBase', context: context);
 
   @override
   void setIsDiscoverMoviesLoading(bool value) {
-    final _$actionInfo = _$MoviesStoreBaseActionController.startAction(
-        name: 'MoviesStoreBase.setLoading');
+    final _$actionInfo = _$MoviesStoreBaseActionController.startAction(name: 'MoviesStoreBase.setLoading');
     try {
       return super.setIsDiscoverMoviesLoading(value);
     } finally {

@@ -10,11 +10,9 @@ class MovieScreen extends StatefulWidget {
 }
 
 class _MovieScreenState extends State<MovieScreen> {
-
   @override
   void initState() {
     super.initState();
-
   }
 
   @override

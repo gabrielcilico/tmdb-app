@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:tmdb_app/design/theme/palette.dart';
 import 'package:tmdb_app/generated/l10n.dart';
