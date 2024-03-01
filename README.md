@@ -2,7 +2,7 @@
 
 This is a "clone" of [TMDB](https://www.themoviedb.org/) made with [Flutter](https://flutter.dev/).
 
-Access web version [tmdb-app.cilico.dev](https://tmdb-app.cilico.dev/).
+Access web version [here](https://dapper-cobbler-f76ebe.netlify.app/).
 
 ## Quickstart
 
@@ -55,7 +55,6 @@ Run this command:
 | [dio](https://pub.dev/packages/dio)                         | A powerful HTTP networking package for Dart/Flutter, supports Global configuration, Interceptors, FormData, Request cancellation, File uploading/downloading, Timeout, Custom adapters, Transformers, etc. |
 | [flutter_mobx](https://pub.dev/packages/flutter_mobx)       |                                                      Provides the Observer widget that listens to observables and automatically rebuilds on changes.                                                       |
 | [flutter_modular](https://pub.dev/packages/flutter_modular) |                     Modular is not only ingenious for doing something amazing like componentizing Routes and Dependency Injections, it's amazing for being able to do all this simply!                     |
-| [mocktail](https://pub.dev/packages/mocktail)               |                          Mocktail focuses on providing a familiar, simple API for creating mocks in Dart (with null-safety) without the need for manual mocks or code generation.                          |
 
 ## Dev Dependencies
 
