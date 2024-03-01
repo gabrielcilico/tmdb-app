@@ -75,3 +75,17 @@ Click [here](https://www.themoviedb.org/settings/api) to get your API key.
 API Reference: 
 - [TMDB API Docs](https://developer.themoviedb.org/docs/getting-started)
 - [TMDB API Reference](https://developer.themoviedb.org/reference/intro/getting-started)
+
+# Screenshots
+
+## Android
+
+![img.png](github/assets/img.png)
+[APK Download]()
+
+## iOS
+
+## Web
+
+![img_1.png](github/assets/img_1.png)
+[Web Version](https://dapper-cobbler-f76ebe.netlify.app/)

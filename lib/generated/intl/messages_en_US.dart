@@ -26,35 +26,47 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "badRequestExceptionMessage":
-            MessageLookupByLibrary.simpleMessage("Bad request, please check the data and try again."),
+        "badRequestExceptionMessage": MessageLookupByLibrary.simpleMessage(
+            "Bad request, please check the data and try again."),
         "castTitle": MessageLookupByLibrary.simpleMessage("Cast"),
         "computedVotesLabel": m0,
-        "defaultExceptionMessage":
-            MessageLookupByLibrary.simpleMessage("Service unavailable at the moment, please try again later."),
+        "defaultExceptionMessage": MessageLookupByLibrary.simpleMessage(
+            "Service unavailable at the moment, please try again later."),
         "detailsTitle": MessageLookupByLibrary.simpleMessage("Details"),
-        "discoverMoviesTitle": MessageLookupByLibrary.simpleMessage("Discover New Movies"),
+        "discoverMoviesTitle":
+            MessageLookupByLibrary.simpleMessage("Discover New Movies"),
         "genresLabel": MessageLookupByLibrary.simpleMessage("Genre(s)"),
-        "moviesHomeScreenTitle": MessageLookupByLibrary.simpleMessage("TMDB App"),
-        "noConnectionExceptionMessage": MessageLookupByLibrary.simpleMessage("No connection."),
+        "moviesHomeScreenTitle":
+            MessageLookupByLibrary.simpleMessage("TMDB App"),
+        "noConnectionExceptionMessage":
+            MessageLookupByLibrary.simpleMessage("No connection."),
         "noImagePlaceholder": MessageLookupByLibrary.simpleMessage("No Image"),
-        "notFoundExceptionMessage": MessageLookupByLibrary.simpleMessage("Not found."),
-        "nowPlayingMoviesTitle": MessageLookupByLibrary.simpleMessage("Now Playing"),
+        "notFoundExceptionMessage":
+            MessageLookupByLibrary.simpleMessage("Not found."),
+        "nowPlayingMoviesTitle":
+            MessageLookupByLibrary.simpleMessage("Now Playing"),
         "overviewLabel": MessageLookupByLibrary.simpleMessage("Overview"),
-        "popularMoviesTitle": MessageLookupByLibrary.simpleMessage("Most Popular"),
+        "popularMoviesTitle":
+            MessageLookupByLibrary.simpleMessage("Most Popular"),
         "releaseDateLabel": m1,
         "searchExample": MessageLookupByLibrary.simpleMessage("Ex: Batman"),
-        "searchMoviesTitle": MessageLookupByLibrary.simpleMessage("Search Movies"),
+        "searchMoviesTitle":
+            MessageLookupByLibrary.simpleMessage("Search Movies"),
         "seeAllButton": MessageLookupByLibrary.simpleMessage("See All"),
         "seeMoreButton": MessageLookupByLibrary.simpleMessage("See More"),
-        "similarMoviesTitle": MessageLookupByLibrary.simpleMessage("Similar Movies"),
-        "timeOutExceptionMessage": MessageLookupByLibrary.simpleMessage("Request timeout."),
-        "topRatedMoviesTitle": MessageLookupByLibrary.simpleMessage("Top Rated"),
+        "similarMoviesTitle":
+            MessageLookupByLibrary.simpleMessage("Similar Movies"),
+        "timeOutExceptionMessage":
+            MessageLookupByLibrary.simpleMessage("Request timeout."),
+        "topRatedMoviesTitle":
+            MessageLookupByLibrary.simpleMessage("Top Rated"),
         "unauthorizedAlertMessage": MessageLookupByLibrary.simpleMessage(
             "Your session has expired, please log in again to continue using the application."),
-        "unauthorizedExceptionMessage": MessageLookupByLibrary.simpleMessage("Unauthorized"),
-        "unprocessableEntityExceptionMessage":
-            MessageLookupByLibrary.simpleMessage("Error processing the request, please check the data and try again."),
-        "upcomingMoviesTitle": MessageLookupByLibrary.simpleMessage("Upcoming Releases")
+        "unauthorizedExceptionMessage":
+            MessageLookupByLibrary.simpleMessage("Unauthorized"),
+        "unprocessableEntityExceptionMessage": MessageLookupByLibrary.simpleMessage(
+            "Error processing the request, please check the data and try again."),
+        "upcomingMoviesTitle":
+            MessageLookupByLibrary.simpleMessage("Upcoming Releases")
       };
 }

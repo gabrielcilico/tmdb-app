@@ -26,35 +26,48 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "badRequestExceptionMessage":
-            MessageLookupByLibrary.simpleMessage("Requisição má sucedida, verifique os dados e tente novamente."),
+        "badRequestExceptionMessage": MessageLookupByLibrary.simpleMessage(
+            "Requisição má sucedida, verifique os dados e tente novamente."),
         "castTitle": MessageLookupByLibrary.simpleMessage("Elenco"),
         "computedVotesLabel": m0,
-        "defaultExceptionMessage":
-            MessageLookupByLibrary.simpleMessage("Serviço indisponível no momento, tente novamente mais tarde."),
+        "defaultExceptionMessage": MessageLookupByLibrary.simpleMessage(
+            "Serviço indisponível no momento, tente novamente mais tarde."),
         "detailsTitle": MessageLookupByLibrary.simpleMessage("Detalhes"),
-        "discoverMoviesTitle": MessageLookupByLibrary.simpleMessage("Descubra novos filmes"),
+        "discoverMoviesTitle":
+            MessageLookupByLibrary.simpleMessage("Descubra novos filmes"),
         "genresLabel": MessageLookupByLibrary.simpleMessage("Gênero(s)"),
-        "moviesHomeScreenTitle": MessageLookupByLibrary.simpleMessage("TMDB App"),
-        "noConnectionExceptionMessage": MessageLookupByLibrary.simpleMessage("Sem conexão."),
-        "noImagePlaceholder": MessageLookupByLibrary.simpleMessage("Sem imagem"),
-        "notFoundExceptionMessage": MessageLookupByLibrary.simpleMessage("Não encontrado."),
-        "nowPlayingMoviesTitle": MessageLookupByLibrary.simpleMessage("Em cartaz"),
+        "moviesHomeScreenTitle":
+            MessageLookupByLibrary.simpleMessage("TMDB App"),
+        "noConnectionExceptionMessage":
+            MessageLookupByLibrary.simpleMessage("Sem conexão."),
+        "noImagePlaceholder":
+            MessageLookupByLibrary.simpleMessage("Sem imagem"),
+        "notFoundExceptionMessage":
+            MessageLookupByLibrary.simpleMessage("Não encontrado."),
+        "nowPlayingMoviesTitle":
+            MessageLookupByLibrary.simpleMessage("Em cartaz"),
         "overviewLabel": MessageLookupByLibrary.simpleMessage("Sinopse"),
-        "popularMoviesTitle": MessageLookupByLibrary.simpleMessage("Os Mais Populares"),
+        "popularMoviesTitle":
+            MessageLookupByLibrary.simpleMessage("Os Mais Populares"),
         "releaseDateLabel": m1,
         "searchExample": MessageLookupByLibrary.simpleMessage("Ex: Batman"),
-        "searchMoviesTitle": MessageLookupByLibrary.simpleMessage("Buscar filmes"),
+        "searchMoviesTitle":
+            MessageLookupByLibrary.simpleMessage("Buscar filmes"),
         "seeAllButton": MessageLookupByLibrary.simpleMessage("Ver todos"),
         "seeMoreButton": MessageLookupByLibrary.simpleMessage("Ver mais"),
-        "similarMoviesTitle": MessageLookupByLibrary.simpleMessage("Filmes similares"),
-        "timeOutExceptionMessage": MessageLookupByLibrary.simpleMessage("Tempo de requisição expirado."),
-        "topRatedMoviesTitle": MessageLookupByLibrary.simpleMessage("Melhores avaliados"),
+        "similarMoviesTitle":
+            MessageLookupByLibrary.simpleMessage("Filmes similares"),
+        "timeOutExceptionMessage": MessageLookupByLibrary.simpleMessage(
+            "Tempo de requisição expirado."),
+        "topRatedMoviesTitle":
+            MessageLookupByLibrary.simpleMessage("Melhores avaliados"),
         "unauthorizedAlertMessage": MessageLookupByLibrary.simpleMessage(
             "Sua sessão expirou, faça login novamente para continuar utilizando o aplicativo."),
-        "unauthorizedExceptionMessage": MessageLookupByLibrary.simpleMessage("Não autorizado"),
+        "unauthorizedExceptionMessage":
+            MessageLookupByLibrary.simpleMessage("Não autorizado"),
         "unprocessableEntityExceptionMessage": MessageLookupByLibrary.simpleMessage(
             "Erro ao processar a requisição, verifique os dados e tente novamente."),
-        "upcomingMoviesTitle": MessageLookupByLibrary.simpleMessage("Próximos lançamentos")
+        "upcomingMoviesTitle":
+            MessageLookupByLibrary.simpleMessage("Próximos lançamentos")
       };
 }
