@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="integration_tests" type="FlutterTestConfigType" factoryName="Flutter Test" nameIsGenerated="true">
+    <option name="testFile" value="$PROJECT_DIR$/integration_test/all_integration_test.dart" />
+    <option name="useRegexp" value="false" />
+    <option name="additionalArgs" value="--dart-define=API_KEY=32ff1972f078b12cb3ec733c27c91eb6" />
+    <method v="2" />
+  </configuration>
+</component>
