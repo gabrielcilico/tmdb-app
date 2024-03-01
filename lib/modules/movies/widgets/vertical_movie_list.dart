@@ -38,8 +38,9 @@ class _VerticalMovieListState extends State<VerticalMovieList> {
               TextButton(
                   onPressed: () => widget.fetchMovies(),
                   child: Text(S.current.seeMoreButton,
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Palette.white))),
-            ]
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Palette.primary))),
+            ],
+            const SizedBox(height: 16),
           ],
         ),
       ),
