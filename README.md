@@ -89,11 +89,17 @@ API Reference:
 ## Android
 
 ![img.png](github/assets/img.png)
+
 [APK Download](https://drive.google.com/file/d/1X9PTyNJ0g4gDwAGennxRPYdpQ9bhG7vg/view?usp=drive_link)
 
 ## iOS
 
+![img.png](github/assets/img_2.png)
+
+_Download unavailable_
+
 ## Web
 
 ![img_1.png](github/assets/img_1.png)
+
 [Web Version](https://dapper-cobbler-f76ebe.netlify.app/)
