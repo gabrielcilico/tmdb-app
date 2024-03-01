@@ -10,7 +10,7 @@ import '../utils/models_mock.dart';
 void main() {
   testWidgets('Should render Horizontal Cast List', (WidgetTester tester) async {
     await mockNetworkImagesFor(
-            () async => await tester.pumpWidget(defaultStructure(HorizontalCastList(casts: getCast(), isLoading: false))));
+        () async => await tester.pumpWidget(defaultStructure(HorizontalCastList(casts: getCast(), isLoading: false))));
     expect(find.byType(HorizontalCastList), findsOneWidget);
     expect(find.byType(ListView), findsOneWidget);
     expect(find.byType(CastCard), findsNWidgets(2));

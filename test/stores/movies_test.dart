@@ -1,4 +1,3 @@
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:tmdb_app/modules/movies/services/credits.dart';
@@ -8,6 +7,7 @@ import 'package:tmdb_app/modules/movies/stores/movies.dart';
 import '../utils/models_mock.dart';
 
 class MoviesServiceMock extends Mock implements MoviesService {}
+
 class CreditsServiceMock extends Mock implements CreditsService {}
 
 void main() {

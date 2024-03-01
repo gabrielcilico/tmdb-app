@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:tmdb_app/modules/movies/widgets/custom_app_bar.dart';
 
 import '../utils/default_stucture.dart';
-import '../utils/models_mock.dart';
 
 void main() {
   testWidgets('Should render CustomAppBar without buttons', (WidgetTester tester) async {
@@ -40,7 +39,6 @@ void main() {
     var icon = find.byType(Icon);
     expect(icon, findsOneWidget);
   });
-
 
   testWidgets('Should render CustomAppBar with search button', (WidgetTester tester) async {
     await tester.pumpWidget(defaultStructure(

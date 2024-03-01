@@ -11,7 +11,8 @@ class HttpServiceMock extends Mock implements HttpService {}
 void main() {
   test('Should return Cast list', () async {
     HttpServiceMock mock = HttpServiceMock();
-    when(() => mock.get(path: '/movie/1/credits', queryParams: {'language': 'pt-BR'})).thenAnswer((_) async => getCastsJson());
+    when(() => mock.get(path: '/movie/1/credits', queryParams: {'language': 'pt-BR'}))
+        .thenAnswer((_) async => getCastsJson());
 
     CreditsService service = CreditsService(mock);
     List<Cast> casts = await service.getCast(1);

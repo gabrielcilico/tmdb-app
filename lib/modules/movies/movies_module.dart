@@ -2,10 +2,8 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:tmdb_app/common/http/http_service.dart';
 import 'package:tmdb_app/generated/l10n.dart';
 import 'package:tmdb_app/modules/movies/services/credits.dart';
-import 'package:tmdb_app/modules/movies/services/genres.dart';
 import 'package:tmdb_app/modules/movies/services/movies.dart';
 import 'package:tmdb_app/modules/movies/stores/discover.dart';
-import 'package:tmdb_app/modules/movies/stores/genres.dart';
 import 'package:tmdb_app/modules/movies/stores/movies.dart';
 import 'package:tmdb_app/modules/movies/stores/now_playing.dart';
 import 'package:tmdb_app/modules/movies/stores/popular.dart';
@@ -15,7 +13,7 @@ import 'package:tmdb_app/modules/movies/stores/upcoming.dart';
 import 'package:tmdb_app/modules/movies/views/movie_screen/main.dart';
 import 'package:tmdb_app/modules/movies/views/movies_home_screen.dart';
 import 'package:tmdb_app/modules/movies/views/pageable_movies_screen.dart';
-import 'package:tmdb_app/modules/movies/views/search_page.dart';
+import 'package:tmdb_app/modules/movies/views/search_screen.dart';
 
 class MoviesModule extends Module {
   static const String moviesRoute = "/movies";
@@ -24,9 +22,7 @@ class MoviesModule extends Module {
   List<Bind> get binds => [
         Bind((i) => MoviesService(i<HttpService>())),
         Bind((i) => CreditsService(i<HttpService>())),
-        Bind((i) => GenresService(i<HttpService>())),
         Bind((i) => MoviesStore(i<MoviesService>(), i<CreditsService>())),
-        Bind((i) => GenresStore(i<GenresService>())),
         Bind((i) => DiscoverStore(i<MoviesService>())),
         Bind((i) => TopRatedStore(i<MoviesService>())),
         Bind((i) => PopularStore(i<MoviesService>())),

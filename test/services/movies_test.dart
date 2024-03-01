@@ -16,7 +16,8 @@ void main() {
 
   group('Movie tests List', () {
     test('Should return Discover movie list', () async {
-      when(() => mock.get(path: '/discover/movie', queryParams: {'language': 'pt-BR', 'page': 1})).thenAnswer((_) async => getMoviesJson());
+      when(() => mock.get(path: '/discover/movie', queryParams: {'language': 'pt-BR', 'page': 1}))
+          .thenAnswer((_) async => getMoviesJson());
 
       Pageable<Movie> movies = await service.discoverMovies(1);
 
@@ -28,7 +29,8 @@ void main() {
     });
 
     test('Should return Top Rated movie list', () async {
-      when(() => mock.get(path: '/movie/top_rated', queryParams: {'language': 'pt-BR', 'page': 1})).thenAnswer((_) async => getMoviesJson());
+      when(() => mock.get(path: '/movie/top_rated', queryParams: {'language': 'pt-BR', 'page': 1}))
+          .thenAnswer((_) async => getMoviesJson());
 
       Pageable<Movie> movies = await service.topRatedMovies(1);
 
@@ -40,7 +42,8 @@ void main() {
     });
 
     test('Should return Popular movie list', () async {
-      when(() => mock.get(path: '/movie/popular', queryParams: {'language': 'pt-BR', 'page': 1})).thenAnswer((_) async => getMoviesJson());
+      when(() => mock.get(path: '/movie/popular', queryParams: {'language': 'pt-BR', 'page': 1}))
+          .thenAnswer((_) async => getMoviesJson());
 
       Pageable<Movie> movies = await service.popularMovies(1);
 
@@ -52,7 +55,8 @@ void main() {
     });
 
     test('Should return Now Playing movie list', () async {
-      when(() => mock.get(path: '/movie/now_playing', queryParams: {'language': 'pt-BR', 'page': 1})).thenAnswer((_) async => getMoviesJson());
+      when(() => mock.get(path: '/movie/now_playing', queryParams: {'language': 'pt-BR', 'page': 1}))
+          .thenAnswer((_) async => getMoviesJson());
 
       Pageable<Movie> movies = await service.nowPlayingMovies(1);
 
@@ -64,7 +68,8 @@ void main() {
     });
 
     test('Should return Upcoming movie list', () async {
-      when(() => mock.get(path: '/movie/upcoming', queryParams: {'language': 'pt-BR', 'page': 1})).thenAnswer((_) async => getMoviesJson());
+      when(() => mock.get(path: '/movie/upcoming', queryParams: {'language': 'pt-BR', 'page': 1}))
+          .thenAnswer((_) async => getMoviesJson());
 
       Pageable<Movie> movies = await service.upcomingMovies(1);
 
@@ -76,7 +81,8 @@ void main() {
     });
 
     test('Should return Similar movie list', () async {
-      when(() => mock.get(path: '/movie/1/similar', queryParams: {'language': 'pt-BR', 'page': 1})).thenAnswer((_) async => getMoviesJson());
+      when(() => mock.get(path: '/movie/1/similar', queryParams: {'language': 'pt-BR', 'page': 1}))
+          .thenAnswer((_) async => getMoviesJson());
 
       Pageable<Movie> movies = await service.similarMovies(1, 1);
 
@@ -88,11 +94,13 @@ void main() {
     });
 
     test('Should return Searched movie list', () async {
-      when(() => mock.get(path: '/search/movie', queryParams: {'language': 'pt-BR', 'page': 1, 'query': 'batman'})).thenAnswer((_) async => getMoviesJson());
+      when(() => mock.get(path: '/search/movie', queryParams: {'language': 'pt-BR', 'page': 1, 'query': 'batman'}))
+          .thenAnswer((_) async => getMoviesJson());
 
       Pageable<Movie> movies = await service.searchMovies('batman', 1);
 
-      verify(() => mock.get(path: '/search/movie', queryParams: {'language': 'pt-BR', 'page': 1, 'query': 'batman'})).called(1);
+      verify(() => mock.get(path: '/search/movie', queryParams: {'language': 'pt-BR', 'page': 1, 'query': 'batman'}))
+          .called(1);
 
       expect(movies.results.length, 2);
       expect(movies.results.first.title, 'Movie 1');
@@ -101,7 +109,8 @@ void main() {
   });
 
   test('Should return Detailed Movie', () async {
-    when(() => mock.get(path: '/movie/1', queryParams: {'language': 'pt-BR'})).thenAnswer((_) async => getDetailedMovieJson());
+    when(() => mock.get(path: '/movie/1', queryParams: {'language': 'pt-BR'}))
+        .thenAnswer((_) async => getDetailedMovieJson());
 
     DetailedMovie movie = await service.getMovieDetails('1');
 
