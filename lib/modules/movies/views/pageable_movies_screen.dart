@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:tmdb_app/common/config/config.dart';
+import 'package:tmdb_app/common/widgets/limited_width_container.dart';
 import 'package:tmdb_app/modules/movies/stores/abstract_typed_store.dart';
 import 'package:tmdb_app/modules/movies/widgets/custom_app_bar.dart';
 import 'package:tmdb_app/modules/movies/widgets/vertical_movie_list.dart';
@@ -37,8 +37,7 @@ class _PageableMoviesScreenState extends State<PageableMoviesScreen> {
       body: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            constraints: BoxConstraints(maxWidth: DefaultConfig().maxWidth),
+          LimitedWidthContainer(
             child: Observer(
               builder: (_) {
                 return VerticalMovieList(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:tmdb_app/common/config/config.dart';
+import 'package:tmdb_app/common/widgets/limited_width_container.dart';
 import 'package:tmdb_app/design/theme/palette.dart';
 import 'package:tmdb_app/generated/l10n.dart';
 import 'package:tmdb_app/modules/movies/models/detailed_movie.dart';
@@ -50,8 +50,7 @@ class _MovieScreenState extends State<MovieScreen> {
         body: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              constraints: BoxConstraints(maxWidth: DefaultConfig().maxWidth),
+            LimitedWidthContainer(
               color: Palette.primaryDark,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),

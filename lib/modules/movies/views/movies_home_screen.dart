@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:tmdb_app/common/config/config.dart';
 import 'package:tmdb_app/common/functions/navigator_service.dart';
+import 'package:tmdb_app/common/widgets/limited_width_container.dart';
 import 'package:tmdb_app/generated/l10n.dart';
 import 'package:tmdb_app/modules/movies/stores/discover.dart';
 import 'package:tmdb_app/modules/movies/stores/now_playing.dart';
@@ -45,8 +45,7 @@ class _MoviesHomeScreenState extends State<MoviesHomeScreen> {
           return Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                constraints: BoxConstraints(maxWidth: DefaultConfig().maxWidth),
+              LimitedWidthContainer(
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
