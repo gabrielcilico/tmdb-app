@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:tmdb_app/modules/movies/widgets/genre_chip_list.dart';
 
-import '../../../utils/default_stucture.dart';
-import '../../../utils/models_mock.dart';
+import '../utils/default_stucture.dart';
+import '../utils/models_mock.dart';
 
 void main() {
   testWidgets('Should render a Chip List', (WidgetTester tester) async {
