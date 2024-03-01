@@ -81,11 +81,17 @@ API Reference:
 ## Android
 
 ![img.png](github/assets/img.png)
+
 [APK Download]()
 
 ## iOS
 
+![img.png](github/assets/img_2.png)
+
+_Download unavailable_
+
 ## Web
 
 ![img_1.png](github/assets/img_1.png)
+
 [Web Version](https://dapper-cobbler-f76ebe.netlify.app/)
