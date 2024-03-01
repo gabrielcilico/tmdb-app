@@ -32,3 +32,7 @@ void pushNamedAndRemoveUntil({
     arguments: arguments,
   );
 }
+
+void pop() {
+  if (Modular.to.canPop()) Modular.to.pop();
+}

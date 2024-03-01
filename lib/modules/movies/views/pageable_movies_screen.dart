@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:tmdb_app/common/config/config.dart';
 import 'package:tmdb_app/modules/movies/stores/abstract_typed_store.dart';
+import 'package:tmdb_app/modules/movies/widgets/custom_app_bar.dart';
 import 'package:tmdb_app/modules/movies/widgets/vertical_movie_list.dart';
 
 class PageableMoviesScreen extends StatefulWidget {
@@ -29,17 +31,25 @@ class _PageableMoviesScreenState extends State<PageableMoviesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
+      appBar: CustomAppBar(
+        textTitle: widget.title,
       ),
-      body: Observer(
-        builder: (_) {
-          return VerticalMovieList(
-            isLoading: widget.store.isLoading,
-            movies: widget.store.movies,
-            fetchMovies: widget.store.fetchMovies,
-          );
-        },
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            constraints: BoxConstraints(maxWidth: DefaultConfig().maxWidth),
+            child: Observer(
+              builder: (_) {
+                return VerticalMovieList(
+                  isLoading: widget.store.isLoading,
+                  movies: widget.store.movies,
+                  fetchMovies: widget.store.fetchMovies,
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }

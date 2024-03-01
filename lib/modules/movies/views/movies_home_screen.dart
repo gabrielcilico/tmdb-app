@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:tmdb_app/common/config/config.dart';
 import 'package:tmdb_app/common/functions/navigator_service.dart';
 import 'package:tmdb_app/generated/l10n.dart';
 import 'package:tmdb_app/modules/movies/stores/discover.dart';
@@ -38,39 +39,47 @@ class _MoviesHomeScreenState extends State<MoviesHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(textTitle: S.of(context).moviesHomeScreenTitle),
+      appBar: CustomAppBar(textTitle: S.of(context).moviesHomeScreenTitle, showBackButton: false),
       body: Observer(
         builder: (_) {
-          return SingleChildScrollView(
-            child: Column(
-              children: [
-                HorizontalMovieList(
-                    title: S.of(context).topRatedMoviesTitle,
-                    movies: topRatedStore.movies,
-                    isLoading: topRatedStore.isLoading,
-                    seeAll: () => pushNamed(routeName: '/movies/top-rated')),
-                HorizontalMovieList(
-                    title: S.of(context).popularMoviesTitle,
-                    movies: popularStore.movies,
-                    isLoading: popularStore.isLoading,
-                    seeAll: () => pushNamed(routeName: '/movies/popular')),
-                HorizontalMovieList(
-                    title: S.of(context).upcomingMoviesTitle,
-                    movies: upcomingStore.movies,
-                    isLoading: upcomingStore.isLoading,
-                    seeAll: () => pushNamed(routeName: '/movies/upcoming')),
-                HorizontalMovieList(
-                    title: S.of(context).nowPlayingMoviesTitle,
-                    movies: nowPlayingStore.movies,
-                    isLoading: nowPlayingStore.isLoading,
-                    seeAll: () => pushNamed(routeName: '/movies/now-playing')),
-                HorizontalMovieList(
-                    title: S.of(context).discoverMoviesTitle,
-                    movies: discoverStore.movies,
-                    isLoading: discoverStore.isLoading,
-                    seeAll: () => pushNamed(routeName: '/movies/discover')),
-              ],
-            ),
+          return Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                constraints: BoxConstraints(maxWidth: DefaultConfig().maxWidth),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      HorizontalMovieList(
+                          title: S.of(context).topRatedMoviesTitle,
+                          movies: topRatedStore.movies,
+                          isLoading: topRatedStore.isLoading,
+                          seeAll: () => pushNamed(routeName: '/movies/top-rated')),
+                      HorizontalMovieList(
+                          title: S.of(context).popularMoviesTitle,
+                          movies: popularStore.movies,
+                          isLoading: popularStore.isLoading,
+                          seeAll: () => pushNamed(routeName: '/movies/popular')),
+                      HorizontalMovieList(
+                          title: S.of(context).upcomingMoviesTitle,
+                          movies: upcomingStore.movies,
+                          isLoading: upcomingStore.isLoading,
+                          seeAll: () => pushNamed(routeName: '/movies/upcoming')),
+                      HorizontalMovieList(
+                          title: S.of(context).nowPlayingMoviesTitle,
+                          movies: nowPlayingStore.movies,
+                          isLoading: nowPlayingStore.isLoading,
+                          seeAll: () => pushNamed(routeName: '/movies/now-playing')),
+                      HorizontalMovieList(
+                          title: S.of(context).discoverMoviesTitle,
+                          movies: discoverStore.movies,
+                          isLoading: discoverStore.isLoading,
+                          seeAll: () => pushNamed(routeName: '/movies/discover')),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           );
         },
       ),

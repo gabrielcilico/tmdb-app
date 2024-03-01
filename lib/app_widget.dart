@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -20,21 +21,29 @@ class _AppWidgetState extends State<AppWidget> {
     Modular.setInitialRoute(AppModule.splashScreenRoute);
 
     return MaterialApp.router(
-      routeInformationParser: Modular.routeInformationParser,
-      routerDelegate: Modular.routerDelegate,
-      localizationsDelegates: const [
-        S.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      debugShowCheckedModeBanner: false,
-      supportedLocales: const <Locale>[
-        Locale.fromSubtags(languageCode: 'pt', countryCode: 'BR'),
-        Locale.fromSubtags(languageCode: 'en', countryCode: 'US'),
-      ],
-      locale: const Locale.fromSubtags(languageCode: 'pt', countryCode: 'BR'),
-      theme: DefaultTheme.getTheme(context),
-    );
+        routeInformationParser: Modular.routeInformationParser,
+        routerDelegate: Modular.routerDelegate,
+        localizationsDelegates: const [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        debugShowCheckedModeBanner: false,
+        supportedLocales: const <Locale>[
+          Locale.fromSubtags(languageCode: 'pt', countryCode: 'BR'),
+          Locale.fromSubtags(languageCode: 'en', countryCode: 'US'),
+        ],
+        locale: const Locale.fromSubtags(languageCode: 'pt', countryCode: 'BR'),
+        theme: DefaultTheme.getTheme(context),
+        scrollBehavior: const MaterialScrollBehavior().copyWith(
+          dragDevices: {
+            PointerDeviceKind.touch,
+            PointerDeviceKind.mouse,
+            PointerDeviceKind.stylus,
+            PointerDeviceKind.trackpad,
+            PointerDeviceKind.unknown
+          },
+        ));
   }
 }

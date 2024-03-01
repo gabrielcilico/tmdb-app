@@ -2,6 +2,8 @@
 
 This is a "clone" of [TMDB](https://www.themoviedb.org/) made with [Flutter](https://flutter.dev/).
 
+Access web version [tmdb-app.cilico.dev](https://tmdb-app.cilico.dev/).
+
 ## Quickstart
 
 - clone this repo locally
@@ -36,6 +38,13 @@ This is a "clone" of [TMDB](https://www.themoviedb.org/) made with [Flutter](htt
 2. Run `dart analyze` to check for any errors or warnings
 3. Run `dart format -l 120 .` to format the code
 4. Run `flutter test` to check if all tests are passing
+
+# Build
+
+### Web
+Run this command:
+
+```flutter build web --release --dart-define=API_KEY=YOUR_API_KEY```
 
 ## API Info
 

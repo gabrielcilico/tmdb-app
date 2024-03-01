@@ -5,6 +5,7 @@ abstract class BaseConfig {
   String get imageBaseUrl;
   String get imageBannerUrl;
   String get imageCastUrl;
+  double get maxWidth;
 }
 
 class DefaultConfig extends BaseConfig {
@@ -33,4 +34,7 @@ class DefaultConfig extends BaseConfig {
 
   @override
   String get imageCastUrl => '${imageBaseUrl}w138_and_h175_face';
+
+  @override
+  double get maxWidth => 720;
 }

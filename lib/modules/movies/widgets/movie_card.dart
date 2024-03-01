@@ -20,9 +20,17 @@ class MovieCard extends StatelessWidget {
         onTap: () => pushNamed(routeName: '/movies/${movie.id}'),
         child: Container(
           width: 154,
+          height: 320,
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(8)),
             color: Palette.white,
+            boxShadow: [
+              BoxShadow(
+                color: Palette.gray,
+                blurRadius: 4,
+                offset: Offset(0, 2),
+              ),
+            ],
           ),
           clipBehavior: Clip.antiAliasWithSaveLayer,
           child: Column(

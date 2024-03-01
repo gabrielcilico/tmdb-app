@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tmdb_app/common/config/config.dart';
 import 'package:tmdb_app/generated/l10n.dart';
 import 'package:tmdb_app/modules/movies/models/detailed_movie.dart';
 import 'package:tmdb_app/modules/movies/widgets/rate_indicator.dart';
@@ -10,6 +11,8 @@ class MovieDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double maxWidth = DefaultConfig().maxWidth;
+    double width = (MediaQuery.of(context).size.width >= maxWidth ? maxWidth : MediaQuery.of(context).size.width) - 186;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Column(
@@ -17,7 +20,7 @@ class MovieDetails extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            width: MediaQuery.of(context).size.width - 186,
+            width: width,
             child: Text(
               movie.title,
               style: Theme.of(context).textTheme.titleLarge,

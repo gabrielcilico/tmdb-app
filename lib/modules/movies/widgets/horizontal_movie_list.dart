@@ -81,6 +81,13 @@ class _HorizontalMovieListState extends State<HorizontalMovieList> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
             color: Palette.white,
+            boxShadow: const [
+              BoxShadow(
+                color: Palette.gray,
+                blurRadius: 4,
+                offset: Offset(0, 2),
+              ),
+            ],
           ),
           clipBehavior: Clip.antiAliasWithSaveLayer,
           child: Center(

@@ -18,7 +18,7 @@ class DefaultTheme {
         secondary: Palette.secondary,
         primary: Palette.primary,
       ),
-      scaffoldBackgroundColor: Palette.primary,
+      scaffoldBackgroundColor: Palette.white,
       iconTheme: const IconThemeData(color: Palette.iconColor),
       dialogBackgroundColor: Colors.white,
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
