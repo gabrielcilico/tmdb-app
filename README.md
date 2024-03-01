@@ -3,6 +3,7 @@
 This is a "clone" of [TMDB](https://www.themoviedb.org/) made with [Flutter](https://flutter.dev/).
 
 Access web version [here](https://dapper-cobbler-f76ebe.netlify.app/).
+Download APK [here](https://drive.google.com/file/d/1X9PTyNJ0g4gDwAGennxRPYdpQ9bhG7vg/view?usp=drive_link).
 
 ## Quickstart
 
@@ -41,9 +42,16 @@ To run the unit tests, use the following command:
 # Build
 
 ### Web
+
 Run this command:
 
 ```flutter build web --release --dart-define=API_KEY=YOUR_API_KEY```
+
+### Android (APK)
+
+Run this command:
+
+```flutter build apk --release --dart-define=API_KEY=YOUR_API_KEY```
 
 
 ## Dependencies
@@ -81,7 +89,7 @@ API Reference:
 ## Android
 
 ![img.png](github/assets/img.png)
-[APK Download]()
+[APK Download](https://drive.google.com/file/d/1X9PTyNJ0g4gDwAGennxRPYdpQ9bhG7vg/view?usp=drive_link)
 
 ## iOS
 
