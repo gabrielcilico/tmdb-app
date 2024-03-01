@@ -3,7 +3,7 @@
 This is a "clone" of [TMDB](https://www.themoviedb.org/) made with [Flutter](https://flutter.dev/).
 
 Access web version [here](https://dapper-cobbler-f76ebe.netlify.app/).
-Download APK [here](https://drive.google.com/file/d/1X9PTyNJ0g4gDwAGennxRPYdpQ9bhG7vg/view?usp=drive_link).
+Download APK [here](https://drive.google.com/file/d/114oHHhfCr58M6KlktMFHkap2do3vrthl/view?usp=sharing).
 
 ## Quickstart
 
@@ -90,7 +90,7 @@ API Reference:
 
 ![img.png](github/assets/img.png)
 
-[APK Download](https://drive.google.com/file/d/1X9PTyNJ0g4gDwAGennxRPYdpQ9bhG7vg/view?usp=drive_link)
+[APK Download](https://drive.google.com/file/d/114oHHhfCr58M6KlktMFHkap2do3vrthl/view?usp=sharing)
 
 ## iOS
 
