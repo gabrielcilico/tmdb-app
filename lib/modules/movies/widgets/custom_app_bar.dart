@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tmdb_app/common/config/config.dart';
 import 'package:tmdb_app/common/functions/navigator_service.dart';
 import 'package:tmdb_app/design/theme/palette.dart';
+import 'package:tmdb_app/modules/movies/movies_module.dart';
 
 class CustomAppBar extends AppBar {
   final String textTitle;
@@ -18,7 +19,7 @@ class CustomAppBar extends AppBar {
                 if (showBackButton) ...[
                   IconButton(
                     icon: const Icon(Icons.arrow_back, color: Palette.secondary),
-                    onPressed: () => pop(),
+                    onPressed: () => popOrPush(routeName: MoviesModule.moviesRoute),
                   ),
                 ],
                 Text(textTitle, style: const TextStyle(color: Palette.secondary)),

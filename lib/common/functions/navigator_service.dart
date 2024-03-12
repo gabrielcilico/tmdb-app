@@ -36,3 +36,13 @@ void pushNamedAndRemoveUntil({
 void pop() {
   if (Modular.to.canPop()) Modular.to.pop();
 }
+
+void popOrPush({String? routeName}) {
+  if (Modular.to.canPop()) {
+    Modular.to.pop();
+    return;
+  }
+  if (routeName != null) {
+    pushNamed(routeName: routeName);
+  }
+}
